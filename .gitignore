@@ -1,0 +1,19 @@
+# Large dataset files (hosted on Zenodo)
+web3blockset/issues_prs.csv
+
+# Intermediate pipeline outputs
+prs_issues_commits_collected/
+repo_comments_combiner_collected/
+
+# Node
+web3blockset-dashboard/node_modules/
+web3blockset-dashboard/dist/
+
+# Python
+__pycache__/
+*.pyc
+.env
+
+# OS
+.DS_Store
+Thumbs.db
