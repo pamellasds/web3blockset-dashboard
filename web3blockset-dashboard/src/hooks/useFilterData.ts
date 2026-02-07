@@ -58,15 +58,13 @@ export function useFilterData() {
       return;
     }
 
-    const records: LightRecord[] = [];
+    let loadedSoFar = 0;
     Papa.parse(`${basePath}data/issues_prs_light.csv`, {
       download: true,
       header: true,
-      worker: true,
       skipEmptyLines: true,
-      step: (result) => {
-        const row = result.data as Record<string, string>;
-        records.push({
+      chunk: (results) => {
+        const rows = (results.data as Record<string, string>[]).map((row) => ({
           repository: row.repository || "",
           owner: row.owner || "",
           issue_number: parseInt(row.issue_number) || 0,
@@ -80,21 +78,20 @@ export function useFilterData() {
           repository_category: row.repository_category || "",
           year: parseInt(row.year) || 0,
           data_source: row.data_source || "",
-        });
-        if (records.length % 50000 === 0) {
-          setState((s) => ({
-            ...s,
-            totalLoaded: records.length,
-            progress: Math.min(95, (records.length / 400000) * 100),
-          }));
-        }
-      },
-      complete: () => {
-        allRecords.current = records;
-        RECORDS_CACHE.data = records;
+        }));
+        allRecords.current = allRecords.current.concat(rows);
+        loadedSoFar += rows.length;
         setState((s) => ({
           ...s,
-          totalLoaded: records.length,
+          totalLoaded: loadedSoFar,
+          progress: Math.min(95, (loadedSoFar / 400000) * 100),
+        }));
+      },
+      complete: () => {
+        RECORDS_CACHE.data = allRecords.current;
+        setState((s) => ({
+          ...s,
+          totalLoaded: allRecords.current.length,
           loading: false,
           progress: 100,
         }));
