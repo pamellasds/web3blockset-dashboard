@@ -99,7 +99,7 @@ if [[ "$FULL_PIPELINE" == true ]]; then
 
     echo ""
     echo "--- Step 2a: Collecting provider issues/PRs/commits ---"
-    python3 2_prs_issues_commits_collector.py --providers
+    python3 2_prs_issues_commits_collector.py --providers --since-csv "$ISSUES_CSV"
 
     echo ""
     echo "--- Step 2b: Collecting community issues/PRs (keyword search) ---"

@@ -10,6 +10,7 @@ import sys
 from datetime import datetime
 from github import Github
 from tqdm import tqdm
+import pandas as pd
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "GITHUB_TOKEN")
 
@@ -48,6 +49,45 @@ class GitHubCollector:
                 'last_updated': datetime.now().isoformat(),
                 'total_processed': len(processed_issues)
             }, f, indent=2)
+    def seed_checkpoints_from_csv(self, csv_path):
+        """
+        Pre-populate checkpoints and build a since-map from an existing issues_prs.csv.
+        Returns a dict {repo_full_name: datetime} with the max updated_at per repo,
+        so the API only fetches issues/PRs updated after the last known record.
+        """
+        if not os.path.exists(csv_path):
+            print(f"[seed] CSV not found: {csv_path} — starting fresh.")
+            return {}
+
+        print(f"[seed] Loading existing records from {csv_path}...")
+        df = pd.read_csv(
+            csv_path,
+            usecols=lambda c: c in ('repository', 'owner', 'issue_number', 'updated_at'),
+            dtype={'repository': str, 'owner': str, 'issue_number': 'Int64'},
+            parse_dates=['updated_at'],
+            low_memory=False,
+        )
+
+        since_map = {}
+        seeded = 0
+
+        for (owner, repo), grp in df.groupby(['owner', 'repository']):
+            repo_full = f"{owner}/{repo}"
+            issue_numbers = set(grp['issue_number'].dropna().astype(int).tolist())
+
+            # Write checkpoint so Script 2 skips these numbers
+            self.save_checkpoint(repo_full, issue_numbers)
+            seeded += len(issue_numbers)
+
+            # Max updated_at → use as `since` parameter in GitHub API
+            max_updated = grp['updated_at'].dropna().max()
+            if pd.notna(max_updated):
+                since_map[repo_full] = max_updated.to_pydatetime()
+
+        print(f"[seed] Seeded checkpoints for {len(since_map)} repos ({seeded:,} known issues/PRs).")
+        return since_map
+
+
     
     def check_rate_limit(self):
         try:
@@ -156,7 +196,7 @@ class GitHubCollector:
         with open(json_path, 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
     
-    def collect_repositories(self, config):
+    def collect_repositories(self, config, since_map=None):
         repos = config.get('repositories', [])
         if not repos:
             print("No repositories found in config")
@@ -171,14 +211,19 @@ class GitHubCollector:
                 
                 processed = self.get_checkpoint(repo_name)
                 repo = self.github.get_repo(repo_name)
-                
+
                 issues_data = []
                 comments_data = []
                 commits_data = []
-                
-                issues = repo.get_issues(state='all')
+
+                since = since_map.get(repo_name) if since_map else None
+                if since:
+                    print(f"  Collecting since {since.date()} (incremental)")
+                    issues = repo.get_issues(state='all', since=since)
+                else:
+                    issues = repo.get_issues(state='all')
                 total = issues.totalCount
-                print(f"  Total issues/PRs: {total}")
+                print(f"  Total issues/PRs to fetch: {total}")
                 
                 for issue in tqdm(issues, total=min(total, 1000), desc="  Processing"):
                     if issue.number in processed:
@@ -400,6 +445,8 @@ def main():
                        help='Collect from provider repos (uses repositories.yaml)')
     parser.add_argument('--communities', action='store_true',
                        help='Search community repos (uses keywords.json)')
+    parser.add_argument('--since-csv', default='',
+                       help='Path to existing issues_prs.csv to seed checkpoints and enable incremental collection')
     args = parser.parse_args()
     
     try:
@@ -411,7 +458,10 @@ def main():
             
             collector = GitHubCollector('providers')
             config = collector.load_config(config_path)
-            collector.collect_repositories(config)
+            since_map = {}
+            if args.since_csv and os.path.exists(args.since_csv):
+                since_map = collector.seed_checkpoints_from_csv(args.since_csv)
+            collector.collect_repositories(config, since_map=since_map)
             print("\nProvider collection complete")
             
         else:
