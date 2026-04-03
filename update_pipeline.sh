@@ -102,10 +102,15 @@ echo ""
 # ---------------------------------------------------------------------------
 if [[ "$FULL_PIPELINE" == true ]]; then
 
-    echo "--- Step 1: Collecting repository metadata ---"
-    python3 1_repo_info_collector.py
+    if [[ "$UPDATE_REPOS" == true ]]; then
+        echo "--- Step 1: Collecting repository metadata ---"
+        python3 1_repo_info_collector.py
+        echo ""
+    else
+        echo "--- Step 1: Skipped (use --update-repos to re-discover repos) ---"
+        echo ""
+    fi
 
-    echo ""
     echo "--- Step 2a: Collecting provider issues/PRs/commits ---"
     python3 2_prs_issues_commits_collector.py --providers --since-csv "$ISSUES_CSV"
 
