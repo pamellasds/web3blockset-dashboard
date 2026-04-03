@@ -8,7 +8,7 @@ import json
 import logging
 
 # Configuration
-GITHUB_TOKEN = "GITHUB_TOKEN"
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "GITHUB_TOKEN")
 ORGANIZATIONS_FILE = "additional_files/web3_organizations.json"
 OUTPUT_DIR = "./additional_files"
 RATE_LIMIT_DELAY = 1.0
@@ -134,7 +134,7 @@ def main():
     print(f"Collecting Web3 repositories...")
     print(f"Filters: min {MIN_STARS} stars, min {MIN_ISSUES} issues\n")
     
-    if GITHUB_TOKEN == "ghp_your_token_here":
+    if not GITHUB_TOKEN or GITHUB_TOKEN in ("GITHUB_TOKEN", "ghp_your_token_here"):
         print("ERROR: Set your GitHub token first.")
         return
     

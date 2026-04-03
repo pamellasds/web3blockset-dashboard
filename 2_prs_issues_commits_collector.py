@@ -11,7 +11,7 @@ from datetime import datetime
 from github import Github
 from tqdm import tqdm
 
-GITHUB_TOKEN = "GITHUB_TOKEN"
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "GITHUB_TOKEN")
 
 class GitHubCollector:
     def __init__(self, mode):
