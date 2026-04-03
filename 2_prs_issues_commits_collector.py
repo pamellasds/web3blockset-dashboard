@@ -62,9 +62,9 @@ class GitHubCollector:
         print(f"[seed] Loading existing records from {csv_path}...")
         df = pd.read_csv(
             csv_path,
-            usecols=lambda c: c in ('repository', 'owner', 'issue_number', 'updated_at'),
+            usecols=lambda c: c in ('repository', 'owner', 'issue_number', 'created_at'),
             dtype={'repository': str, 'owner': str, 'issue_number': 'Int64'},
-            parse_dates=['updated_at'],
+            parse_dates=['created_at'],
             low_memory=False,
         )
 
@@ -79,10 +79,14 @@ class GitHubCollector:
             self.save_checkpoint(repo_full, issue_numbers)
             seeded += len(issue_numbers)
 
-            # Max updated_at → use as `since` parameter in GitHub API
-            max_updated = grp['updated_at'].dropna().max()
-            if pd.notna(max_updated):
-                since_map[repo_full] = max_updated.to_pydatetime()
+            # Max created_at → use as `since` parameter in GitHub API.
+            # Using created_at (not updated_at) means the API returns only
+            # issues/PRs *created* after this date, which is a much smaller
+            # set and avoids iterating through issues that were merely
+            # commented on or labelled after collection.
+            max_created = grp['created_at'].dropna().max()
+            if pd.notna(max_created):
+                since_map[repo_full] = max_created.to_pydatetime()
 
         print(f"[seed] Seeded checkpoints for {len(since_map)} repos ({seeded:,} known issues/PRs).")
         return since_map
