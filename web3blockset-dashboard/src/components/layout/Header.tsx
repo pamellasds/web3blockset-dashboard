@@ -14,7 +14,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <NavLink to="/" className="flex items-center gap-2 font-bold text-lg text-primary-700">
-            <img src="/logo.png" alt="Web3BlockSet" className="h-8 object-contain" />
+            <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Web3BlockSet" className="h-8 object-contain" />
           </NavLink>
 
           <nav className="flex items-center gap-1">
