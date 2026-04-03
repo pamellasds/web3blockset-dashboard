@@ -11,8 +11,8 @@
 # Default mode regenerates dashboard JSONs from the existing local CSV and
 # commits/pushes the result to trigger a GitHub Pages redeploy.
 #
-# Cronjob — quarterly (Jan/Apr/Jul/Oct 1st at 02:00 local time):
-#   0 2 1 1,4,7,10 * cd /home/pamella/Desktop/phd/web3blockset-dashboard && ./update_pipeline.sh >> logs/pipeline.log 2>&1
+# Cronjob — monthly (every 1st at 02:00 local time):
+#   0 2 1 * * cd /home/pamella/Desktop/phd/web3blockset-dashboard && ./update_pipeline.sh >> logs/pipeline.log 2>&1
 # =============================================================================
 
 set -euo pipefail
