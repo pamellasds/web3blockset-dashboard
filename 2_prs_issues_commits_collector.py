@@ -200,6 +200,49 @@ class GitHubCollector:
         with open(json_path, 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
     
+    def _search_new_issues(self, repo_name, since_date):
+        """
+        Use GitHub Search API to find issues/PRs created after since_date in a
+        specific repo. Returns a list of raw API item dicts.
+        Avoids iterating the full issue list (which filters by updated_at, not
+        created_at) — the Search API supports created:>DATE natively.
+        Rate limit: 30 req/min (separate bucket from REST API).
+        Max 1000 results per query; sufficient for monthly incremental updates.
+        """
+        date_str = since_date.strftime('%Y-%m-%d')
+        headers = {'Authorization': f'token {self.token}',
+                   'Accept': 'application/vnd.github.v3+json'}
+        items = []
+        for type_filter in ('issue', 'pr'):
+            page = 1
+            while True:
+                query = f'repo:{repo_name} created:>{date_str} is:{type_filter}'
+                params = {'q': query, 'sort': 'created', 'order': 'asc',
+                          'per_page': 100, 'page': page}
+                try:
+                    self.check_rate_limit()
+                    r = self.make_request_with_retry(
+                        'https://api.github.com/search/issues', headers, params)
+                    if r.status_code == 422:
+                        break  # query too complex / no results
+                    if r.status_code == 403:
+                        print(f"  Search rate limit, waiting 60s...")
+                        time.sleep(60)
+                        continue
+                    if r.status_code != 200:
+                        print(f"  Search error {r.status_code}")
+                        break
+                    batch = r.json().get('items', [])
+                    items.extend(batch)
+                    if len(batch) < 100:
+                        break
+                    page += 1
+                    time.sleep(2)  # respect search rate limit
+                except Exception as e:
+                    print(f"  Search error: {e}")
+                    break
+        return items
+
     def collect_repositories(self, config, since_map=None):
         repos = config.get('repositories', [])
         if not repos:
@@ -221,11 +264,69 @@ class GitHubCollector:
                 commits_data = []
 
                 since = since_map.get(repo_name) if since_map else None
+
                 if since:
-                    print(f"  Collecting since {since.date()} (incremental)")
-                    issues = repo.get_issues(state='all', since=since)
-                else:
-                    issues = repo.get_issues(state='all')
+                    # --- INCREMENTAL: Search API (created:>DATE) ---
+                    print(f"  Collecting since {since.date()} via Search API (incremental)")
+                    raw_items = self._search_new_issues(repo_name, since)
+                    new_items = [it for it in raw_items if it['number'] not in processed]
+                    print(f"  New issues/PRs found: {len(new_items)}")
+
+                    for item in tqdm(new_items, desc="  Processing"):
+                        self.check_rate_limit()
+                        is_pr = 'pull_request' in item and item['pull_request'] is not None
+                        owner = repo_name.split('/')[0]
+
+                        try:
+                            issue_obj = repo.get_issue(item['number'])
+                            if item.get('comments', 0) > 0:
+                                comments_data.extend(self.collect_comments(issue_obj))
+                        except Exception:
+                            pass
+
+                        commit_count = 0
+                        if is_pr:
+                            commit_count = self.get_commit_count(repo, item['number'])
+                            try:
+                                commits_data.extend(self.collect_commits(repo, item['number']))
+                            except Exception:
+                                pass
+
+                        issue_data = {
+                            'Repository': repo_name,
+                            'Owner': owner,
+                            'Issue ID': item['id'],
+                            'Issue Number': item['number'],
+                            'Issue Title': item['title'],
+                            'Issue Body': item.get('body') or '',
+                            'State': item['state'],
+                            'Created At': item['created_at'],
+                            'Updated At': item['updated_at'],
+                            'Closed At': item.get('closed_at'),
+                            'Author': item['user']['login'],
+                            'Author ID': item['user']['id'],
+                            'Locked': item['locked'],
+                            'Number of Comments': item.get('comments', 0),
+                            'Number of Commits': commit_count,
+                            'Labels': ', '.join([l['name'] for l in item.get('labels', [])]),
+                            'Type': "Pull Request" if is_pr else "Issue"
+                        }
+                        issues_data.append(issue_data)
+                        processed.add(item['number'])
+
+                        if len(issues_data) % 50 == 0:
+                            self.save_data(repo_name, issues_data, comments_data, commits_data, append=True)
+                            self.save_checkpoint(repo_name, processed)
+                            issues_data, comments_data, commits_data = [], [], []
+
+                    if issues_data:
+                        self.save_data(repo_name, issues_data, comments_data, commits_data, append=True)
+                    self.save_checkpoint(repo_name, processed)
+                    print(f"  Saved {len(processed)} issues/PRs\n")
+                    continue  # next repo
+
+                # --- FULL COLLECTION (new repos, no since_map entry) ---
+                issues = repo.get_issues(state='all')
                 total = issues.totalCount
                 print(f"  Total issues/PRs to fetch: {total}")
                 
