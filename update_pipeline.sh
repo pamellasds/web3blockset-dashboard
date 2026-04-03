@@ -111,6 +111,18 @@ if [[ "$FULL_PIPELINE" == true ]]; then
         echo ""
     fi
 
+    # Ensure repositories.yaml exists (needed by Step 2a)
+    if [[ ! -f "additional_files/repositories.yaml" ]]; then
+        echo "[info] repositories.yaml not found — generating from repositories.csv..."
+        python3 -c "
+import pandas as pd, yaml
+df = pd.read_csv('web3blockset/repositories.csv')
+urls = df['html_url'].dropna().str.strip().tolist()
+yaml.dump({'repositories': urls}, open('additional_files/repositories.yaml','w'), default_flow_style=False)
+print(f'Generated repositories.yaml with {len(urls)} repos')
+"
+    fi
+
     echo "--- Step 2a: Collecting provider issues/PRs/commits ---"
     python3 2_prs_issues_commits_collector.py --providers --since-csv "$ISSUES_CSV"
 
