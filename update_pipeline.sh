@@ -4,10 +4,14 @@
 # =============================================================================
 #
 # Usage:
-#   ./update_pipeline.sh              # Dashboard refresh only (from existing CSV)
-#   ./update_pipeline.sh --full       # Full data collection + dashboard refresh
+#   ./update_pipeline.sh                          # Dashboard refresh only (from existing CSV)
+#   ./update_pipeline.sh --full                   # Incremental data collection + dashboard refresh
+#   ./update_pipeline.sh --full --update-repos    # Also re-discover repos from GitHub orgs (Step 1)
 #
-# The --full mode runs all 4 collection scripts (requires GITHUB_TOKEN).
+# --full        Runs Steps 2-4 (incremental: seeds checkpoints from existing CSV,
+#               fetches only issues/PRs updated since last collection). Requires GITHUB_TOKEN.
+# --update-repos  Also runs Step 1 (repo metadata discovery). Use when you want to
+#               pick up new repos added to the tracked organizations.
 # Default mode regenerates dashboard JSONs from the existing local CSV and
 # commits/pushes the result to trigger a GitHub Pages redeploy.
 #
@@ -21,9 +25,13 @@ REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$REPO_ROOT"
 
 FULL_PIPELINE=false
-if [[ "${1:-}" == "--full" ]]; then
-    FULL_PIPELINE=true
-fi
+UPDATE_REPOS=false
+for arg in "$@"; do
+    case "$arg" in
+        --full)          FULL_PIPELINE=true ;;
+        --update-repos)  UPDATE_REPOS=true ;;
+    esac
+done
 
 ISSUES_CSV="web3blockset/issues_prs.csv"
 REPOS_CSV="web3blockset/repositories.csv"
