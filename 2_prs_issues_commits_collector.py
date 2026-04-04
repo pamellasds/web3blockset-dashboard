@@ -52,8 +52,13 @@ class GitHubCollector:
     def seed_checkpoints_from_csv(self, csv_path):
         """
         Pre-populate checkpoints and build a since-map from an existing issues_prs.csv.
-        Returns a dict {repo_full_name: datetime} with the max updated_at per repo,
-        so the API only fetches issues/PRs updated after the last known record.
+        Returns a dict {repo_full_name: datetime} with the max created_at per repo,
+        so the API only fetches issues/PRs created after the last known record.
+
+        If a checkpoint file already exists on disk (e.g. from an interrupted previous
+        run), it is preserved — only repos with no checkpoint file are seeded from the
+        CSV.  The since_map is always populated from the CSV so incremental collection
+        starts from the right date regardless.
         """
         if not os.path.exists(csv_path):
             print(f"[seed] CSV not found: {csv_path} — starting fresh.")
@@ -70,25 +75,30 @@ class GitHubCollector:
 
         since_map = {}
         seeded = 0
+        skipped = 0
 
         for (owner, repo), grp in df.groupby(['owner', 'repository']):
             repo_full = f"{owner}/{repo}"
-            issue_numbers = set(grp['issue_number'].dropna().astype(int).tolist())
 
-            # Write checkpoint so Script 2 skips these numbers
-            self.save_checkpoint(repo_full, issue_numbers)
-            seeded += len(issue_numbers)
-
-            # Max created_at → use as `since` parameter in GitHub API.
-            # Using created_at (not updated_at) means the API returns only
-            # issues/PRs *created* after this date, which is a much smaller
-            # set and avoids iterating through issues that were merely
-            # commented on or labelled after collection.
+            # Build since_map regardless — needed for the Search API date filter
             max_created = grp['created_at'].dropna().max()
             if pd.notna(max_created):
                 since_map[repo_full] = max_created.to_pydatetime()
 
-        print(f"[seed] Seeded checkpoints for {len(since_map)} repos ({seeded:,} known issues/PRs).")
+            # Only write checkpoint if none exists on disk yet.
+            # Existing checkpoints (from an interrupted previous run) are already
+            # up-to-date and must NOT be overwritten with older CSV data.
+            checkpoint_file = f"{self.checkpoints_dir}/{repo_full.replace('/', '_')}_checkpoint.json"
+            if os.path.exists(checkpoint_file):
+                skipped += 1
+                continue
+
+            issue_numbers = set(grp['issue_number'].dropna().astype(int).tolist())
+            self.save_checkpoint(repo_full, issue_numbers)
+            seeded += len(issue_numbers)
+
+        print(f"[seed] Seeded {seeded:,} issue/PRs for {len(since_map)-skipped} repos "
+              f"({skipped} already had checkpoints on disk — preserved).")
         return since_map
 
 
