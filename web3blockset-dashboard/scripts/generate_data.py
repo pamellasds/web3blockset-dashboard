@@ -327,6 +327,107 @@ def generate_light_csv(df: pd.DataFrame, output_path: str):
     print(f"  Written {output_path} ({size_mb:.1f} MB)")
 
 
+def generate_productivity(df: pd.DataFrame) -> dict:
+    print("Generating productivity.json...")
+
+    closed = df[df["state"] == "closed"].copy()
+    closed = closed.dropna(subset=["created_at", "closed_at"])
+    closed["resolution_days"] = (
+        (closed["closed_at"] - closed["created_at"]).dt.total_seconds() / 86400
+    )
+    closed = closed[closed["resolution_days"] >= 0]
+
+    def safe_round(v):
+        if v is None:
+            return None
+        try:
+            return None if np.isnan(float(v)) else round(float(v), 1)
+        except Exception:
+            return None
+
+    def group_metrics(group_col: str, top_n=None) -> list:
+        valid = df[df[group_col].notna() & (df[group_col].astype(str).str.strip() != "")].copy()
+        valid_closed = closed[closed[group_col].notna() & (closed[group_col].astype(str).str.strip() != "")].copy()
+        groups = valid[group_col].value_counts()
+        if top_n:
+            groups = groups.head(top_n)
+        results = []
+        for group_val, _ in groups.items():
+            grp_all = valid[valid[group_col] == group_val]
+            grp_closed = valid_closed[valid_closed[group_col] == group_val]
+            grp_prs = grp_all[grp_all["type"].str.lower() == "pull request"]
+            grp_prs_closed = grp_closed[grp_closed["type"].str.lower() == "pull request"]
+            grp_issues_closed = grp_closed[grp_closed["type"].str.lower() == "issue"]
+            pr_lead = grp_prs_closed["resolution_days"].median() if len(grp_prs_closed) > 0 else None
+            issue_res = grp_issues_closed["resolution_days"].median() if len(grp_issues_closed) > 0 else None
+            pr_merge_rate = (len(grp_prs_closed) / len(grp_prs) * 100) if len(grp_prs) > 0 else None
+            flow_time = grp_closed["resolution_days"].median() if len(grp_closed) > 0 else None
+            dates = grp_all["created_at"].dropna()
+            n_months = max((dates.max() - dates.min()).days / 30.44, 1) if len(dates) >= 2 else 1
+            results.append({
+                "group": str(group_val),
+                "totalItems": int(len(grp_all)),
+                "issues": int((grp_all["type"].str.lower() == "issue").sum()),
+                "prs": int(len(grp_prs)),
+                "closedItems": int(len(grp_closed)),
+                "openItems": int((grp_all["state"] == "open").sum()),
+                "medianPRLeadTimeDays": safe_round(pr_lead),
+                "medianIssueResolutionDays": safe_round(issue_res),
+                "prMergeRate": safe_round(pr_merge_rate),
+                "medianFlowTimeDays": safe_round(flow_time),
+                "throughputPerMonth": safe_round(len(grp_prs_closed) / n_months),
+                "flowVelocityPerMonth": safe_round(len(grp_closed) / n_months),
+            })
+        return sorted(results, key=lambda x: x["totalItems"], reverse=True)
+
+    prs_all = df[df["type"].str.lower() == "pull request"]
+    prs_closed_all = closed[closed["type"].str.lower() == "pull request"]
+    issues_closed_all = closed[closed["type"].str.lower() == "issue"]
+    global_pr_lead = prs_closed_all["resolution_days"].median() if len(prs_closed_all) > 0 else None
+    global_issue_res = issues_closed_all["resolution_days"].median() if len(issues_closed_all) > 0 else None
+    global_pr_merge_rate = (len(prs_closed_all) / len(prs_all) * 100) if len(prs_all) > 0 else None
+    global_flow_time = closed["resolution_days"].median() if len(closed) > 0 else None
+
+    import warnings
+    df_valid = df.dropna(subset=["created_at"]).copy()
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        df_valid["month"] = df_valid["created_at"].dt.to_period("M")
+        monthly_created = df_valid.groupby("month").size().reset_index(name="created")
+        closed_valid = closed.dropna(subset=["closed_at"]).copy()
+        closed_valid["month_closed"] = closed_valid["closed_at"].dt.to_period("M")
+        monthly_closed = closed_valid.groupby("month_closed").agg(
+            closed=("resolution_days", "count"),
+            issuesClosed=("type", lambda x: (x.str.lower() == "issue").sum()),
+            prsClosed=("type", lambda x: (x.str.lower() == "pull request").sum()),
+        ).reset_index()
+
+    all_months = sorted(set(monthly_created["month"].tolist() + monthly_closed["month_closed"].tolist()))
+    monthly_trend = []
+    for m in all_months:
+        cr = monthly_created[monthly_created["month"] == m]
+        cl = monthly_closed[monthly_closed["month_closed"] == m]
+        monthly_trend.append({
+            "month": str(m),
+            "created": int(cr["created"].values[0]) if len(cr) > 0 else 0,
+            "closed": int(cl["closed"].values[0]) if len(cl) > 0 else 0,
+            "issuesClosed": int(cl["issuesClosed"].values[0]) if len(cl) > 0 else 0,
+            "prsClosed": int(cl["prsClosed"].values[0]) if len(cl) > 0 else 0,
+        })
+
+    return {
+        "global": {
+            "medianPRLeadTimeDays": safe_round(global_pr_lead),
+            "medianIssueResolutionDays": safe_round(global_issue_res),
+            "prMergeRate": safe_round(global_pr_merge_rate),
+            "medianFlowTimeDays": safe_round(global_flow_time),
+        },
+        "byCategory": group_metrics("repository_category"),
+        "byOwner": group_metrics("owner", top_n=20),
+        "monthlyTrend": monthly_trend,
+    }
+
+
 def save_json(data, output_dir: str, filename: str):
     path = os.path.join(output_dir, filename)
     with open(path, "w") as f:
@@ -368,6 +469,7 @@ def main():
     save_json(generate_resolution_by_category(df), args.output, "resolution_by_category.json")
     save_json(generate_top_labels(df), args.output, "top_labels.json")
     save_json(generate_monthly_activity(df), args.output, "monthly_activity.json")
+    save_json(generate_productivity(df), args.output, "productivity.json")
     save_json(generate_repositories_meta(repos_df), args.output, "repositories_meta.json")
     save_json(generate_filter_options(df), args.output, "filter_options.json")
     generate_light_csv(df, os.path.join(args.output, "issues_prs_light.csv"))

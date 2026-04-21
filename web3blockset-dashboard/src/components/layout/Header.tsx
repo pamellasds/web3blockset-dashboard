@@ -1,11 +1,12 @@
 import { NavLink } from "react-router-dom";
-import { BarChart3, Lightbulb, Github } from "lucide-react";
+import { BarChart3, Lightbulb, Github, Activity } from "lucide-react";
 import { GITHUB_REPO_URL } from "../../utils/constants";
 
 const navItems = [
   { to: "/", label: "Dashboard", icon: BarChart3 },
   // { to: "/filter", label: "Explore Data", icon: Filter },
   { to: "/research", label: "Research Insights", icon: Lightbulb },
+  { to: "/productivity", label: "Productivity", icon: Activity },
 ];
 
 export default function Header() {

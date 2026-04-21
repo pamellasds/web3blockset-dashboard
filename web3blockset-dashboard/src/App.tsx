@@ -3,6 +3,7 @@ import Layout from "./components/layout/Layout";
 import DashboardPage from "./pages/DashboardPage";
 import FilterPage from "./pages/FilterPage";
 import ResearchInsightsPage from "./pages/ResearchInsightsPage";
+import ProductivityPage from "./pages/ProductivityPage";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
           <Route index element={<DashboardPage />} />
           <Route path="filter" element={<FilterPage />} />
           <Route path="research" element={<ResearchInsightsPage />} />
+          <Route path="productivity" element={<ProductivityPage />} />
         </Route>
       </Routes>
     </HashRouter>

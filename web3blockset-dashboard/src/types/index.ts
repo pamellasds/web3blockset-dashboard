@@ -136,3 +136,38 @@ export interface FilterCriteria {
   yearFrom: number | null;
   yearTo: number | null;
 }
+
+export interface ProductivityGroupMetric {
+  group: string;
+  totalItems: number;
+  issues: number;
+  prs: number;
+  closedItems: number;
+  openItems: number;
+  medianPRLeadTimeDays: number | null;
+  medianIssueResolutionDays: number | null;
+  prMergeRate: number | null;
+  medianFlowTimeDays: number | null;
+  throughputPerMonth: number | null;
+  flowVelocityPerMonth: number | null;
+}
+
+export interface ProductivityMonthlyTrend {
+  month: string;
+  created: number;
+  closed: number;
+  issuesClosed: number;
+  prsClosed: number;
+}
+
+export interface ProductivityData {
+  global: {
+    medianPRLeadTimeDays: number | null;
+    medianIssueResolutionDays: number | null;
+    prMergeRate: number | null;
+    medianFlowTimeDays: number | null;
+  };
+  byCategory: ProductivityGroupMetric[];
+  byOwner: ProductivityGroupMetric[];
+  monthlyTrend: ProductivityMonthlyTrend[];
+}
