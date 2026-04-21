@@ -1,4 +1,4 @@
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import ChartCard from "../common/ChartCard";
 import { CHART_COLORS } from "../../utils/chartColors";
 import { formatCompact } from "../../utils/formatNumber";
@@ -18,6 +18,7 @@ export default function TopReposChart({ data }: { data: TopRepository[] }) {
           <XAxis type="number" tickFormatter={formatCompact} tick={{ fontSize: 11 }} />
           <YAxis type="category" dataKey="label" width={200} tick={{ fontSize: 10 }} />
           <Tooltip formatter={(value, name) => [Number(value).toLocaleString(), name]} />
+          <Legend wrapperStyle={{ fontSize: 12, paddingTop: 8 }} />
           <Bar dataKey="issues" name="Issues" stackId="a" fill={CHART_COLORS.issue} />
           <Bar dataKey="prs" name="PRs" stackId="a" fill={CHART_COLORS.pr} radius={[0, 4, 4, 0]} />
         </BarChart>
