@@ -6,6 +6,21 @@ and quantitative changes in that update.
 
 ---
 
+## 2026-04-21 15:46:01 -03 — Dashboard Refresh
+
+| Metric                 |   Previous |    Current |    Delta |
+|------------------------|------------|------------|----------|
+| Total records          |    431,578 |    431,578 | +       0 |
+| Issues                 |    188,243 |    188,243 | +       0 |
+| Pull Requests          |    243,335 |    243,335 | +       0 |
+| Provider records       |    393,888 |    393,888 | +       0 |
+| Community records      |     37,690 |     37,690 | +       0 |
+| Unique repos           |     10,329 |     10,329 | +       0 |
+| Unique authors         |     74,917 |     74,917 | +       0 |
+
+---
+
+
 ## 2026-04-21 15:42:01 -03 — Dashboard Refresh
 
 | Metric                 |   Previous |    Current |    Delta |
