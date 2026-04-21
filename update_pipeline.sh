@@ -20,7 +20,7 @@
 # =============================================================================
 
 set -euo pipefail
-export GIT_SSH_COMMAND="ssh -i /home/pamella/.ssh/id_ed25519 -o StrictHostKeyChecking=accept-new"
+export GIT_SSH_COMMAND="ssh -i /home/pamella/.ssh/id_ed25519_cron -o StrictHostKeyChecking=accept-new"
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$REPO_ROOT"
