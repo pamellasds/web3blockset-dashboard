@@ -20,3 +20,6 @@ Thumbs.db
 
 # Pipeline run logs (local only)
 logs/
+# AI tool artifacts
+.zencoder/
+.zenflow/
