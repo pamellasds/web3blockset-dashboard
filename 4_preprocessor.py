@@ -169,33 +169,19 @@ class DataProcessor:
     def deduplicate(self, df):
         print("\nDeduplicating...")
         print(f"Before: {len(df)}")
-        
-        issues = df[df['type'].str.lower() == 'issue'].copy() if 'type' in df.columns else pd.DataFrame()
-        prs = df[df['type'].str.lower() == 'pull request'].copy() if 'type' in df.columns else pd.DataFrame()
-        
-        if len(issues) > 0:
-            before = len(issues)
-            issues = (
-                issues.sort_values('data_source', ascending=False)
-                .drop_duplicates(subset=['issue_id', 'issue_number'], keep='first')
-            )
-            print(f"  Issues: {before} → {len(issues)}")
-        
-        if len(prs) > 0:
-            before = len(prs)
-            prs = (
-                prs.sort_values('data_source', ascending=False)
-                .drop_duplicates(subset=['issue_id', 'issue_number'], keep='first')
-            )
-            print(f"  PRs: {before} → {len(prs)}")
-        
-        if len(issues) > 0 and len(prs) > 0:
-            result = pd.concat([issues, prs], ignore_index=True)
-        elif len(issues) > 0:
-            result = issues
-        else:
-            result = prs
-        
+
+        # Sort so newer updated_at wins; within same updated_at prefer 'provider' over 'community'
+        sort_cols = [c for c in ['updated_at', 'data_source'] if c in df.columns]
+        if sort_cols:
+            df = df.sort_values(sort_cols, ascending=[False, False])
+
+        # Deduplicate on the full natural key (owner + repository + issue_number).
+        # Using only issue_number/issue_id is wrong: issue #1 in repo A clashes with #1 in repo B.
+        dedup_cols = [c for c in ['owner', 'repository', 'issue_number'] if c in df.columns]
+        if not dedup_cols:
+            dedup_cols = ['issue_id']  # last-resort fallback
+
+        result = df.drop_duplicates(subset=dedup_cols, keep='first').reset_index(drop=True)
         print(f"After: {len(result)}")
         return result
     
@@ -229,10 +215,19 @@ class DataProcessor:
             return None
         
         combined = pd.concat(processed, ignore_index=True)
-        combined = self.deduplicate(combined)
-        
+
         output = "web3blockset/issues_prs.csv"
         os.makedirs(os.path.dirname(output), exist_ok=True)
+
+        # Merge with existing CSV so incremental runs append rather than overwrite
+        if Path(output).exists():
+            print(f"\nLoading existing {output} for merge...")
+            existing = pd.read_csv(output, low_memory=False)
+            print(f"  Existing records: {len(existing):,}")
+            combined = pd.concat([existing, combined], ignore_index=True)
+            print(f"  After merge: {len(combined):,}")
+
+        combined = self.deduplicate(combined)
         combined.to_csv(output, index=False)
         
         print(f"\n{'=' * 60}")
