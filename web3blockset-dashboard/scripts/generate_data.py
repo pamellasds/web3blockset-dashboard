@@ -347,6 +347,17 @@ def main():
     df = load_issues_csv(args.issues_csv)
     repos_df = load_repos_csv(args.repos_csv)
 
+    # Join repository_category from repos_df into df if not already present
+    if "repository_category" not in df.columns or df["repository_category"].isna().all():
+        # Build a deduped owner → category mapping (first non-null value wins)
+        cat_map = (
+            repos_df[["organization", "repository_category"]]
+            .dropna(subset=["repository_category"])
+            .drop_duplicates(subset=["organization"])
+            .set_index("organization")["repository_category"]
+        )
+        df["repository_category"] = df["owner"].map(cat_map).fillna("").astype(str)
+
     save_json(generate_overview(df, repos_df), args.output, "overview.json")
     save_json(generate_yearly_trends(df), args.output, "yearly_trends.json")
     save_json(generate_category_distribution(df), args.output, "category_distribution.json")
