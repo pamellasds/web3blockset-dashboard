@@ -4,7 +4,17 @@ import { CHART_COLORS } from "../../utils/chartColors";
 import { formatCompact } from "../../utils/formatNumber";
 import type { CategoryDistribution } from "../../types";
 
-const truncate = (s: string, max = 28) => s.length > max ? s.slice(0, max) + "…" : s;
+const SingleLineTick = ({ x, y, payload, maxChars = 26 }: any) => {
+  const label: string = payload.value;
+  const text = label.length > maxChars ? label.slice(0, maxChars) + "…" : label;
+  return (
+    <g transform={`translate(${x},${y})`}>
+      <text x={0} y={0} dy={4} textAnchor="end" fill="#475569" fontSize={11}>
+        {text}
+      </text>
+    </g>
+  );
+};
 
 export default function CategoryBarChart({ data }: { data: CategoryDistribution[] }) {
   const top = data.slice(0, 20);
@@ -19,12 +29,9 @@ export default function CategoryBarChart({ data }: { data: CategoryDistribution[
             type="category"
             dataKey="category"
             width={200}
-            tick={{ fontSize: 11 }}
-            tickFormatter={(v) => truncate(v)}
+            tick={<SingleLineTick maxChars={26} />}
           />
-          <Tooltip
-            formatter={(value, name) => [Number(value).toLocaleString(), name]}
-          />
+          <Tooltip formatter={(value, name) => [Number(value).toLocaleString(), name]} />
           <Legend wrapperStyle={{ fontSize: 12, paddingTop: 8 }} />
           <Bar dataKey="issues" name="Issues" stackId="a" fill={CHART_COLORS.issue} />
           <Bar dataKey="prs" name="Pull Requests" stackId="a" fill={CHART_COLORS.pr} radius={[0, 4, 4, 0]} />
