@@ -1,12 +1,11 @@
 import { NavLink } from "react-router-dom";
-import { BarChart3, Lightbulb, Github, Activity } from "lucide-react";
-import { GITHUB_REPO_URL } from "../../utils/constants";
+import { BarChart3, Lightbulb } from "lucide-react";
 
 const navItems = [
   { to: "/", label: "Dashboard", icon: BarChart3 },
   // { to: "/filter", label: "Explore Data", icon: Filter },
   { to: "/research", label: "Research Insights", icon: Lightbulb },
-  { to: "/productivity", label: "Productivity", icon: Activity },
+  // { to: "/productivity", label: "Productivity", icon: Activity },
 ];
 
 export default function Header() {
@@ -36,6 +35,7 @@ export default function Header() {
                 <span className="hidden md:inline">{label}</span>
               </NavLink>
             ))}
+            {/* GitHub link temporarily hidden
             <a
               href={GITHUB_REPO_URL}
               target="_blank"
@@ -45,6 +45,7 @@ export default function Header() {
             >
               <Github size={18} />
             </a>
+            */}
           </nav>
         </div>
       </div>
