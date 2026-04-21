@@ -119,7 +119,7 @@ export default function ProductivityPage() {
               <BarChart data={prLeadData} layout="vertical" margin={{ top: 4, right: 20, bottom: 4, left: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" horizontal={false} />
                 <XAxis type="number" tick={{ fontSize: 11 }} tickFormatter={(v) => `${v}d`} />
-                <YAxis type="category" dataKey="group" width={160} tick={{ fontSize: 10 }} />
+                <YAxis type="category" dataKey="group" width={160} tick={{ fontSize: 10 }} tickFormatter={(v: string) => v.length > 22 ? v.slice(0, 22) + "…" : v} />
                 <Tooltip formatter={(v) => [`${v} days`, "Median PR Lead Time"]} />
                 <Bar dataKey="medianPRLeadTimeDays" name="Median PR Lead Time (days)" fill={DORA_COLOR_PR} radius={[0, 4, 4, 0]} />
               </BarChart>
@@ -132,7 +132,7 @@ export default function ProductivityPage() {
               <BarChart data={issueResData} layout="vertical" margin={{ top: 4, right: 20, bottom: 4, left: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" horizontal={false} />
                 <XAxis type="number" tick={{ fontSize: 11 }} tickFormatter={(v) => `${v}d`} />
-                <YAxis type="category" dataKey="group" width={160} tick={{ fontSize: 10 }} />
+                <YAxis type="category" dataKey="group" width={160} tick={{ fontSize: 10 }} tickFormatter={(v: string) => v.length > 22 ? v.slice(0, 22) + "…" : v} />
                 <Tooltip formatter={(v) => [`${v} days`, "Median Issue Resolution"]} />
                 <Bar dataKey="medianIssueResolutionDays" name="Median Issue Resolution (days)" fill={DORA_COLOR_ISSUE} radius={[0, 4, 4, 0]} />
               </BarChart>
@@ -172,7 +172,7 @@ export default function ProductivityPage() {
               <BarChart data={flowTimeData} layout="vertical" margin={{ top: 4, right: 20, bottom: 4, left: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" horizontal={false} />
                 <XAxis type="number" tick={{ fontSize: 11 }} tickFormatter={(v) => `${v}d`} />
-                <YAxis type="category" dataKey="group" width={160} tick={{ fontSize: 10 }} />
+                <YAxis type="category" dataKey="group" width={160} tick={{ fontSize: 10 }} tickFormatter={(v: string) => v.length > 22 ? v.slice(0, 22) + "…" : v} />
                 <Tooltip formatter={(v) => [`${v} days`, "Median Flow Time"]} />
                 <Bar dataKey="medianFlowTimeDays" name="Median Flow Time (days)" fill={FLOW_COLOR_CLOSED} radius={[0, 4, 4, 0]} />
               </BarChart>
@@ -185,7 +185,7 @@ export default function ProductivityPage() {
               <BarChart data={flowDistData} layout="vertical" margin={{ top: 4, right: 20, bottom: 4, left: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" horizontal={false} />
                 <XAxis type="number" tickFormatter={formatCompact} tick={{ fontSize: 11 }} />
-                <YAxis type="category" dataKey="group" width={160} tick={{ fontSize: 10 }} />
+                <YAxis type="category" dataKey="group" width={160} tick={{ fontSize: 10 }} tickFormatter={(v: string) => v.length > 22 ? v.slice(0, 22) + "…" : v} />
                 <Tooltip formatter={(v, name) => [Number(v).toLocaleString(), name]} />
                 <Legend wrapperStyle={{ fontSize: 12, paddingTop: 8 }} />
                 <Bar dataKey="issues" name="Issues" stackId="a" fill="#f59e0b" />

@@ -4,6 +4,8 @@ import { CHART_COLORS } from "../../utils/chartColors";
 import { formatCompact } from "../../utils/formatNumber";
 import type { CategoryDistribution } from "../../types";
 
+const truncate = (s: string, max = 28) => s.length > max ? s.slice(0, max) + "…" : s;
+
 export default function CategoryBarChart({ data }: { data: CategoryDistribution[] }) {
   const top = data.slice(0, 20);
 
@@ -18,6 +20,7 @@ export default function CategoryBarChart({ data }: { data: CategoryDistribution[
             dataKey="category"
             width={200}
             tick={{ fontSize: 11 }}
+            tickFormatter={(v) => truncate(v)}
           />
           <Tooltip
             formatter={(value, name) => [Number(value).toLocaleString(), name]}
