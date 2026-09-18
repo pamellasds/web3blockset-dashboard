@@ -6,6 +6,21 @@ and quantitative changes in that update.
 
 ---
 
+## 2026-09-17 21:41:27 -03 — Full Pipeline
+
+| Metric                 |   Previous |    Current |    Delta |
+|------------------------|------------|------------|----------|
+| Total records          |    431,578 |    457,798 | +  26,220 |
+| Issues                 |    188,243 |    194,190 | +   5,947 |
+| Pull Requests          |    243,335 |    263,607 | +  20,272 |
+| Provider records       |    393,888 |    420,073 | +  26,185 |
+| Community records      |     37,690 |     37,725 | +      35 |
+| Unique repos           |     10,329 |     10,357 | +      28 |
+| Unique authors         |     74,917 |     77,879 | +   2,962 |
+
+---
+
+
 ## 2026-09-01 02:00:01 -03 — Dashboard Refresh
 
 | Metric                 |   Previous |    Current |    Delta |
