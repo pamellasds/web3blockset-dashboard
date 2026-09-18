@@ -1,4 +1,4 @@
-export const ZENODO_DOI = "10.5281/zenodo.17576503";
+export const ZENODO_DOI = "10.5281/zenodo.22832267";
 export const ZENODO_URL = `https://doi.org/${ZENODO_DOI}`;
 export const GITHUB_REPO_URL = "https://github.com/pamellasds/web3blockset-dashboard";
 export const PAPER_TITLE = "Web3BlockSet: A Dataset for Empirical Research in Blockchain-Oriented Software Engineering";
