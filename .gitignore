@@ -23,3 +23,5 @@ logs/
 # AI tool artifacts
 .zencoder/
 .zenflow/
+.env.*
+!.env.example
