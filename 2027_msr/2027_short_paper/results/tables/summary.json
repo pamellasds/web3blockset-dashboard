@@ -1,0 +1,75 @@
+{
+  "year_min": 2018,
+  "year_max": 2025,
+  "n_docs": 361071,
+  "n_repos": 378,
+  "n_categories": 33,
+  "top3_share_start": 0.5242304910391384,
+  "top3_share_end": 0.45455970734256596,
+  "hhi_start": 0.15730898371136393,
+  "hhi_end": 0.10445618028054075,
+  "top_risers": [
+    {
+      "repository_category": "Specification",
+      "rank_start": 18.0,
+      "rank_end": 9.0,
+      "rank_delta": 9.0
+    },
+    {
+      "repository_category": "Blockchain Core / Privacy Protocol",
+      "rank_start": 14.0,
+      "rank_end": 6.0,
+      "rank_delta": 8.0
+    },
+    {
+      "repository_category": "Development Platform / Framework",
+      "rank_start": 10.0,
+      "rank_end": 3.0,
+      "rank_delta": 7.0
+    },
+    {
+      "repository_category": "Infrastructure",
+      "rank_start": 23.0,
+      "rank_end": 18.0,
+      "rank_delta": 5.0
+    },
+    {
+      "repository_category": "Wallet Dapp / Library / Browser",
+      "rank_start": 7.0,
+      "rank_end": 2.0,
+      "rank_delta": 5.0
+    }
+  ],
+  "top_fallers": [
+    {
+      "repository_category": "Storage Protocol",
+      "rank_start": 4.0,
+      "rank_end": 15.0,
+      "rank_delta": -11.0
+    },
+    {
+      "repository_category": "Research",
+      "rank_start": 21.0,
+      "rank_end": 32.0,
+      "rank_delta": -11.0
+    },
+    {
+      "repository_category": "Testing Tool",
+      "rank_start": 13.0,
+      "rank_end": 20.0,
+      "rank_delta": -7.0
+    },
+    {
+      "repository_category": "Security Tool",
+      "rank_start": 5.0,
+      "rank_end": 11.0,
+      "rank_delta": -6.0
+    },
+    {
+      "repository_category": "Indexing Protocol / Tool",
+      "rank_start": 11.0,
+      "rank_end": 17.0,
+      "rank_delta": -6.0
+    }
+  ]
+}

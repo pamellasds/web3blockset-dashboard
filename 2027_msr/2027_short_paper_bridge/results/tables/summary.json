@@ -1,0 +1,31 @@
+{
+  "w3_docs": 10962,
+  "w3_repos": 6,
+  "w3_buckets": {
+    "other": 8646,
+    "attestation_aggregation": 798,
+    "networking_p2p": 574,
+    "fork_choice": 356,
+    "finality_justification": 326,
+    "testing_verification": 159,
+    "state_transition": 103
+  },
+  "gitskills_test_skills": 17847,
+  "gitskills_layers_focus": {
+    "unit": 5348,
+    "fork": 497,
+    "fuzz_property": 1772,
+    "formal_symbolic": 2025,
+    "integration": 4215
+  },
+  "gitskills_terms": {
+    "fork choice": 23,
+    "consensus spec": 12,
+    "beacon chain": 48,
+    "formal verification": 1506,
+    "model check": 241,
+    "property-based": 713,
+    "invariant test": 328,
+    "fuzzing": 998
+  }
+}

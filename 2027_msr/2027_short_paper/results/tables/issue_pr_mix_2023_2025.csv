@@ -1,0 +1,65 @@
+repository_category,type,n
+AI Tool,Issue,93
+AI Tool,Pull Request,77
+Analytics / Monitoring Tool,Issue,40
+Analytics / Monitoring Tool,Pull Request,83
+Blockchain Core / Privacy Protocol,Issue,3246
+Blockchain Core / Privacy Protocol,Pull Request,8975
+Blockchain Core / Protocol,Issue,10822
+Blockchain Core / Protocol,Pull Request,27449
+Browser Extension,Issue,4662
+Browser Extension,Pull Request,9684
+Cryptography Library,Issue,129
+Cryptography Library,Pull Request,104
+DeFi Protocol,Issue,632
+DeFi Protocol,Pull Request,1092
+Development Platform / Framework,Issue,6161
+Development Platform / Framework,Pull Request,8130
+Documentation,Issue,1600
+Documentation,Pull Request,3033
+Education Resource / Boilerplate,Issue,571
+Education Resource / Boilerplate,Pull Request,804
+IDE / Development Environment,Issue,148
+IDE / Development Environment,Pull Request,39
+Identity / Naming Protocol,Issue,31
+Identity / Naming Protocol,Pull Request,109
+Indexing Protocol / Tool,Issue,690
+Indexing Protocol / Tool,Pull Request,634
+Infrastructure,Issue,269
+Infrastructure,Pull Request,469
+Low-level Analysis Tool / Decoder,Issue,205
+Low-level Analysis Tool / Decoder,Pull Request,148
+Metadata Repository,Issue,826
+Metadata Repository,Pull Request,4574
+NFT Protocol / Tool,Issue,42
+NFT Protocol / Tool,Pull Request,381
+Other,Issue,2865
+Other,Pull Request,6231
+Programming Language / Compiler,Issue,1677
+Programming Language / Compiler,Pull Request,2856
+Research,Issue,8
+Research,Pull Request,8
+SDK / Library,Issue,6929
+SDK / Library,Pull Request,10509
+Security Tool,Issue,4333
+Security Tool,Pull Request,1810
+Smart Contract Deployment Tool,Issue,36
+Smart Contract Deployment Tool,Pull Request,23
+Smart Contract Library,Issue,1195
+Smart Contract Library,Pull Request,5773
+Specification,Issue,692
+Specification,Pull Request,3275
+Staking Tool,Issue,31
+Staking Tool,Pull Request,19
+Storage Protocol,Issue,1143
+Storage Protocol,Pull Request,1810
+Testing Tool,Issue,211
+Testing Tool,Pull Request,673
+UI / Frontend / Library,Issue,704
+UI / Frontend / Library,Pull Request,3051
+Utility Library,Issue,291
+Utility Library,Pull Request,372
+Wallet Dapp / Library / Browser,Issue,5764
+Wallet Dapp / Library / Browser,Pull Request,13510
+ZK Library,Issue,145
+ZK Library,Pull Request,485

@@ -1,0 +1,6 @@
+pandas>=2.0
+numpy>=1.26
+plotly>=5.18
+kaleido>=0.2
+pyarrow>=14
+scipy>=1.11

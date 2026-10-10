@@ -1,0 +1,73 @@
+review_id,concern_bucket,year,repo_key,type,issue_id,issue_title
+R001,networking_p2p,2024,sigp/lighthouse,Pull Request,2082975327,Prevent QUIC logs when quic is disabled
+R002,attestation_aggregation,2018,sigp/lighthouse,Issue,388085366,`canonical_root` methods are stubbed out on several states
+R003,networking_p2p,2020,sigp/lighthouse,Issue,755756498,Pass GossipVerifiedBlocks to slasher
+R004,fork_choice,2019,ethereum/consensus-specs,Issue,488747588,Use attestation epoch in beacon fork choice rule
+R005,testing_verification,2020,ethereum/consensus-specs,Pull Request,620281186,v0.11 multiple blocks in single slot patch
+R006,fork_choice,2021,sigp/lighthouse,Pull Request,975308996,[Merged by Bors] - Revert bad blocks on missed fork
+R007,finality_justification,2019,ethereum/consensus-specs,Issue,409895276,off-by-one validating justified_epoch for attestations
+R008,testing_verification,2021,ethereum/consensus-specs,Pull Request,983195045,Allow spec tests author to batch tests under one handler name
+R009,state_transition,2019,sigp/lighthouse,Pull Request,421326733,Update to spec v0.5.0
+R010,attestation_aggregation,2025,sigp/lighthouse,Pull Request,3720912940,Remove nested spawns and error handling
+R011,attestation_aggregation,2021,ethereum/consensus-specs,Pull Request,946733362,Add tests for SyncAggregate with no participants and all zero signature
+R012,testing_verification,2021,ethereum/execution-specs,Issue,1041311954,Parent hash isn't validated
+R013,testing_verification,2023,ethereum/consensus-specs,Pull Request,1702619189,Remove `is_execution_enabled` condition since Capella
+R014,fork_choice,2020,sigp/lighthouse,Pull Request,703276928,[Merged by Bors] - Fix bad assumption when checking finalized descendant
+R015,finality_justification,2019,ethereum/consensus-specs,Pull Request,435363798,Signal non-final status of base reward and desired issuance goal
+R016,attestation_aggregation,2022,ethereum/consensus-specs,Issue,1326178876,[Question] Finaliser can change his opinion after vote casted?
+R017,state_transition,2020,ethereum/consensus-specs,Pull Request,578849614,Gossip topics with fork digest
+R018,testing_verification,2019,ethereum/consensus-specs,Pull Request,455959065,release `v0.7.1`
+R019,state_transition,2021,sigp/lighthouse,Issue,903134246,Implement consensus context optimisation
+R020,state_transition,2024,ethereum/beacon-APIs,Pull Request,2072037300,Specify 'valid' condition for block SSE event
+R021,testing_verification,2022,ethereum/consensus-specs,Issue,1154411128,Light client sync spec tests
+R022,attestation_aggregation,2021,sigp/lighthouse,Pull Request,980352744,[Merged by Bors] - Expand gossip duplicate cache time
+R023,networking_p2p,2020,ethereum/beacon-APIs,Pull Request,696171921,make ENR nullable in peers response
+R024,fork_choice,2025,sigp/lighthouse,Pull Request,3420031258,Another check to prevent duplicate block imports
+R025,networking_p2p,2025,sigp/lighthouse,Pull Request,2979623358,update gossipsub to the latest upstream revision
+R026,fork_choice,2019,ethereum/consensus-specs,Issue,537894702,Shuffling lookahead is affected by fork choice
+R027,attestation_aggregation,2022,sigp/lighthouse,Issue,1401753501,Feature request for a more streamlined update process
+R028,networking_p2p,2025,sigp/lighthouse,Pull Request,3131458876,Batch verify KZG proofs for getBlobsV2
+R029,networking_p2p,2020,sigp/lighthouse,Pull Request,770543075,[Merged by Bors] - Update libp2p
+R030,testing_verification,2020,sigp/lighthouse,Pull Request,613896358,Implement Slashing Protection
+R031,attestation_aggregation,2022,sigp/lighthouse,Issue,1259237767,Ignore aggregate subsets on gossip
+R032,finality_justification,2025,sigp/lighthouse,Issue,3023118553,Range sync process_completed_batches assumes processing_target exists
+R033,state_transition,2024,sigp/lighthouse,Pull Request,2704664389,Test: Add a test for processing multiple deposits within the same epoch for a given validator
+R034,finality_justification,2022,ethereum/consensus-specs,Pull Request,1285617157,Allow `LightClientUpdate` with genesis finality
+R035,fork_choice,2019,sigp/lighthouse,Pull Request,485540002,Improve fork choice logging
+R036,testing_verification,2024,sigp/lighthouse,Pull Request,2347353212,Beta compiler fixes
+R037,testing_verification,2025,ethereum/consensus-specs,Pull Request,3358077656,Add ability to run framework tests separately
+R038,state_transition,2025,ethereum/execution-specs,Issue,3546701893,New test: Precompile as block coinbase/fee recipient
+R039,state_transition,2020,sigp/lighthouse,Issue,620721355,Consider caching eth1 votes as an optimisation
+R040,attestation_aggregation,2024,sigp/lighthouse,Pull Request,2320640574,Fix BitVectors TestRandom implementation
+R041,attestation_aggregation,2025,sigp/lighthouse,Issue,3673342503,Missing attestation reported locally but seems to  have succeeded
+R042,attestation_aggregation,2019,sigp/lighthouse,Issue,536701119,Validator client sync check is incompatible with recent genesis local testnets
+R043,state_transition,2022,ethereum/execution-specs,Pull Request,1251694688,Include folder names for xfail tests check
+R044,finality_justification,2025,ethereum/consensus-specs,Pull Request,3162381084,Serve `DataColumnSidecarsByRoot` for finalized epochs
+R045,fork_choice,2020,sigp/lighthouse,Pull Request,679472862,[Merged by Bors] - Memory usage reduction
+R046,attestation_aggregation,2020,sigp/lighthouse,Issue,698135988,lighthouse and VPN support
+R047,fork_choice,2023,ethereum/consensus-specs,Pull Request,1626432478,Shift all fork choice tests to Altair & later
+R048,attestation_aggregation,2024,sigp/lighthouse,Pull Request,2288113506,Compute on chain aggregate impl
+R049,state_transition,2025,ethereum/execution-specs,Pull Request,3582456132,enhance(test-benchmark): add vector storage benchmarks for EVM storage operations
+R050,networking_p2p,2025,sigp/lighthouse,Pull Request,3656694754,Optimise out block header calculation
+R051,state_transition,2019,ethereum/consensus-specs,Pull Request,474072346,Cap size of persistent committee to MAX_PERSISTENT_COMMITTEE_SIZE
+R052,state_transition,2019,sigp/lighthouse,Pull Request,422620398,V0.5.0 state transition tests
+R053,testing_verification,2025,ethereum/consensus-specs,Pull Request,3538403061,Do not push files to consensus-spec-tests
+R054,testing_verification,2023,sigp/lighthouse,Pull Request,2022766104,Enable progressive balances fast mode by default
+R055,state_transition,2019,sigp/lighthouse,Pull Request,428589602,State transition tests and Spec v0.5.1
+R056,fork_choice,2019,sigp/lighthouse,Pull Request,485545943,Interop
+R057,finality_justification,2025,sigp/lighthouse,Issue,3472346189,Potentially connected to malicious network
+R058,finality_justification,2024,sigp/lighthouse,Pull Request,2212002217,Deprecate `http-spec-fork` and `http-allow-sync-stalled`
+R059,fork_choice,2019,sigp/lighthouse,Issue,470893843,Fork choice should examine beacon_block_root rather than target.root
+R060,finality_justification,2019,sigp/lighthouse,Issue,484800914,Improve Syncing Strategy - Load balancing
+R061,fork_choice,2018,ethereum/consensus-specs,Pull Request,394690661,Status code / slot reorganization
+R062,networking_p2p,2020,sigp/lighthouse,Pull Request,592551078,Add snappy encoding to gossipsub messages
+R063,finality_justification,2019,sigp/lighthouse,Issue,470782299,13 failed tests on master
+R064,finality_justification,2021,sigp/lighthouse,Pull Request,1069148681,[Merged by Bors] - Optimise balances cache in case of skipped slots
+R065,testing_verification,2021,ethereum/consensus-specs,Pull Request,850876508,Add some basic tests for Altair validator guide
+R066,networking_p2p,2022,sigp/lighthouse,Issue,1121505584,Gossipsub message queuing
+R067,finality_justification,2025,sigp/lighthouse,Pull Request,3552575865,Downgrade gossip logs set to INFO level
+R068,networking_p2p,2020,sigp/lighthouse,Pull Request,750950099,[Merged by Bors] - Sync metrics
+R069,networking_p2p,2024,sigp/lighthouse,Issue,2069764254,Windows stdio in console mode does not support writing non-UTF-8 byte sequences
+R070,finality_justification,2019,ethereum/consensus-specs,Issue,466616185,Blocks added to the store before some verifications
+R071,networking_p2p,2020,sigp/lighthouse,Pull Request,710818104,Networking bug fixes
+R072,fork_choice,2022,sigp/lighthouse,Issue,1385291974,Add flag to lengthen execution layer timeouts

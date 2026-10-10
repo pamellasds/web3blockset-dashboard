@@ -6,8 +6,8 @@ prs_issues_commits_collected/
 repo_comments_combiner_collected/
 
 # Node
-web3blockset-dashboard/node_modules/
-web3blockset-dashboard/dist/
+web3blockset_dashboard/node_modules/
+web3blockset_dashboard/dist/
 
 # Python
 __pycache__/

@@ -1,0 +1,10 @@
+{
+  "fork choice": 23,
+  "consensus spec": 12,
+  "beacon chain": 48,
+  "formal verification": 1506,
+  "model check": 241,
+  "property-based": 713,
+  "invariant test": 328,
+  "fuzzing": 998
+}

@@ -1,0 +1,29 @@
+repository_category,rank_start,rank_end,rank_delta
+Specification,18.0,9.0,9.0
+Blockchain Core / Privacy Protocol,14.0,6.0,8.0
+Development Platform / Framework,10.0,3.0,7.0
+Infrastructure,23.0,18.0,5.0
+Wallet Dapp / Library / Browser,7.0,2.0,5.0
+DeFi Protocol,20.0,16.0,4.0
+Documentation,16.0,12.0,4.0
+Identity / Naming Protocol,28.0,26.0,2.0
+UI / Frontend / Library,15.0,13.0,2.0
+IDE / Development Environment,27.0,26.0,1.0
+Blockchain Core / Protocol,1.0,1.0,0.0
+Cryptography Library,25.0,25.0,0.0
+Metadata Repository,8.0,8.0,0.0
+Smart Contract Deployment Tool,29.0,30.0,-1.0
+Other,6.0,7.0,-1.0
+Browser Extension,3.0,4.0,-1.0
+Smart Contract Library,9.0,10.0,-1.0
+Low-level Analysis Tool / Decoder,22.0,24.0,-2.0
+Analytics / Monitoring Tool,26.0,28.0,-2.0
+Education Resource / Boilerplate,17.0,19.0,-2.0
+Programming Language / Compiler,12.0,14.0,-2.0
+SDK / Library,2.0,5.0,-3.0
+Utility Library,19.0,22.0,-3.0
+Indexing Protocol / Tool,11.0,17.0,-6.0
+Security Tool,5.0,11.0,-6.0
+Testing Tool,13.0,20.0,-7.0
+Research,21.0,32.0,-11.0
+Storage Protocol,4.0,15.0,-11.0

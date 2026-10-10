@@ -1,0 +1,67 @@
+repository_category,role,n_sampled
+AI Tool,core,8
+AI Tool,occasional,8
+Analytics / Monitoring Tool,core,8
+Analytics / Monitoring Tool,occasional,8
+Blockchain Core / Privacy Protocol,core,8
+Blockchain Core / Privacy Protocol,occasional,8
+Blockchain Core / Protocol,core,8
+Blockchain Core / Protocol,occasional,8
+Bridge Protocol,core,3
+Bridge Protocol,occasional,5
+Browser Extension,core,8
+Browser Extension,occasional,8
+Cryptography Library,core,8
+Cryptography Library,occasional,8
+DeFi Protocol,core,8
+DeFi Protocol,occasional,8
+Development Platform / Framework,core,8
+Development Platform / Framework,occasional,8
+Documentation,core,8
+Documentation,occasional,8
+Education Resource / Boilerplate,core,8
+Education Resource / Boilerplate,occasional,8
+IDE / Development Environment,core,8
+IDE / Development Environment,occasional,8
+Identity / Naming Protocol,core,8
+Identity / Naming Protocol,occasional,8
+Indexing Protocol / Tool,core,8
+Indexing Protocol / Tool,occasional,8
+Infrastructure,core,8
+Infrastructure,occasional,8
+Low-level Analysis Tool / Decoder,core,8
+Low-level Analysis Tool / Decoder,occasional,8
+Metadata Repository,core,8
+Metadata Repository,occasional,8
+NFT Protocol / Tool,core,8
+NFT Protocol / Tool,occasional,8
+Other,core,8
+Other,occasional,8
+Programming Language / Compiler,core,8
+Programming Language / Compiler,occasional,8
+Research,core,8
+Research,occasional,8
+SDK / Library,core,8
+SDK / Library,occasional,8
+Security Tool,core,8
+Security Tool,occasional,8
+Smart Contract Deployment Tool,core,8
+Smart Contract Deployment Tool,occasional,8
+Smart Contract Library,core,8
+Smart Contract Library,occasional,8
+Specification,core,8
+Specification,occasional,8
+Staking Tool,core,8
+Staking Tool,occasional,8
+Storage Protocol,core,8
+Storage Protocol,occasional,8
+Testing Tool,core,8
+Testing Tool,occasional,8
+UI / Frontend / Library,core,8
+UI / Frontend / Library,occasional,8
+Utility Library,core,8
+Utility Library,occasional,8
+Wallet Dapp / Library / Browser,core,8
+Wallet Dapp / Library / Browser,occasional,8
+ZK Library,core,8
+ZK Library,occasional,8

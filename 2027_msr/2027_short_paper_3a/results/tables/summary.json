@@ -1,0 +1,17 @@
+{
+  "year_min": 2018,
+  "year_max": 2025,
+  "core_pct": 0.1,
+  "min_repo_docs": 30,
+  "n_docs": 360183,
+  "n_repos": 316,
+  "n_authors": 59141,
+  "share_docs_opened_by_core": 0.6911181260636954,
+  "share_docs_opened_by_occasional": 0.3088818739363046,
+  "core_reply_rate_to_occasional": 0.5902349578442123,
+  "median_gini": 0.5456883162430275,
+  "median_hhi": 0.059886348984140435,
+  "median_core_author_share": 0.10344827586206896,
+  "median_n_core": 8.5,
+  "median_n_authors": 80.5
+}

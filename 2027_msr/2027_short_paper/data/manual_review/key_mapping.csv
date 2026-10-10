@@ -1,0 +1,311 @@
+review_id,repository_category,year,type,owner,repository,issue_id,issue_title,labels,state
+R001,Metadata Repository,2024,Pull Request,trustwallet,assets,2449242269,deda coin info has been added,Payment Status: Requested,closed
+R002,Development Platform / Framework,2019,Pull Request,embarklabs,embark,396574691,fix(blockchain): fix metamask using the old web3,,closed
+R003,Security Tool,2018,Issue,MetaMask,eth-phishing-detect,360140320,Phishing site,blocklist addition,closed
+R004,Education Resource / Boilerplate,2022,Issue,NomicFoundation,hardhat-boilerplate,1461206159,Is this really recommended project structure? ,,closed
+R005,Smart Contract Library,2018,Pull Request,OpenZeppelin,openzeppelin-contracts,331366166,Remove Solidity 0.4.24 abi.encodePacked warning for keccak256,,closed
+R006,Blockchain Core / Privacy Protocol,2025,Pull Request,matter-labs,zksync-era,3020866821,feat: add zkstack cli support for v28,,closed
+R007,ZK Library,2025,Pull Request,Consensys,gnark,3368331718,fix: handle OR call for constant inputs,src: fuzzing,open
+R008,Browser Extension,2025,Issue,MetaMask,metamask-extension,3606657191,[Sentry] [Bug]: `Uncaught (in promise) Error: parentSpan.spanContext is not a function`,"type-bug, area-sentry, area-onboarding, needs-triage, regression-prod-13.9.0, team-onboarding, seedless-onboarding, regression-RC-13.9.0, release-13.10.0",closed
+R009,SDK / Library,2019,Issue,web3,web3.js,447078505,`isBigNumber` is not available in web3-utils,Bug,closed
+R010,Wallet Dapp / Library / Browser,2025,Pull Request,MetaMask,metamask-mobile,3172740481,test: Fix Swap e2e test flakiness,"No QA Needed, No E2E Smoke Needed, team-qa, flaky-e2e-test, release-7.51.0",closed
+R011,Browser Extension,2020,Issue,MetaMask,metamask-extension,611597057,My account is Emptied Out and nobody answer me In Support team!,,closed
+R012,Utility Library,2023,Pull Request,raineorshine,npm-check-updates,1893521976,Speed up requests with dist-tags endpoint,,closed
+R013,Browser Extension,2024,Pull Request,MetaMask,metamask-extension,2307782017,test: Fix popup flakiness in e2e tests,"team-extension-platform, flaky tests, release-12.0.0",closed
+R014,Testing Tool,2024,Pull Request,MetaMask,test-dapp,2211271877,Release candidate v8.5.0,,closed
+R015,Low-level Analysis Tool / Decoder,2018,Issue,crytic,pyevmasm,342820330,Support previous forks instruction sets,,closed
+R016,Indexing Protocol / Tool,2022,Issue,graphprotocol,graph-node,1209801408,ens_name_by_hash is deprecated,,closed
+R017,Utility Library,2025,Pull Request,raineorshine,npm-check-updates,3531714473,add interactive mode keyboard controls to docs,,closed
+R018,Analytics / Monitoring Tool,2021,Issue,Tenderly,tenderly-cli,864182542,"Error when pushing to tenderly (kovan network), contract that imports from @openzeppelin [Hardhat]",,closed
+R019,NFT Protocol / Tool,2022,Issue,ProjectOpenSea,seaport,1415991596,how to customlize conduit?,,closed
+R020,Indexing Protocol / Tool,2022,Issue,graphprotocol,graph-tooling,1178094092,Error during codegen,"bug, area/codegen",closed
+R021,NFT Protocol / Tool,2022,Pull Request,ProjectOpenSea,seaport,1492919127,add tests for ReferenceFulfillmentApplier,,closed
+R022,Wallet Dapp / Library / Browser,2022,Pull Request,MetaMask,core,1298470813,code walk through,,closed
+R023,Wallet Dapp / Library / Browser,2025,Pull Request,rainbow-me,rainbow,3144377636,Candlestick chart integration,,closed
+R024,IDE / Development Environment,2020,Issue,Consensys,cakeshop,642535076,webpack.js -p',,closed
+R025,Security Tool,2025,Issue,MetaMask,eth-phishing-detect,3379378027,Blocklist addition request http://wallex.it.com/test.html,blocklist addition,closed
+R026,Utility Library,2023,Pull Request,raineorshine,npm-check-updates,1816707219,feat: bun as packageManager option,,closed
+R027,Specification,2025,Pull Request,ethereum,execution-apis,3577034615,Add main function in build.js,,closed
+R028,Testing Tool,2022,Issue,ethereum,hive,1324862243,simulators/ethereum/engine: Fix PoW Re-Org Tests,,closed
+R029,Wallet Dapp / Library / Browser,2021,Pull Request,trustwallet,wallet-core,1026111776,[CI] Fix some clang-tidy-11 warnings,,closed
+R030,Education Resource / Boilerplate,2019,Pull Request,Consensys,ethereum-developer-tools-list,522296231,Add kauri.io - Getting started,,closed
+R031,Indexing Protocol / Tool,2023,Pull Request,graphprotocol,graph-tooling,1830818109,cli: fix ABI api endpoint zksync mainnet,,closed
+R032,Specification,2025,Issue,ethereum,execution-specs,3759542542,Optimize `execute remote` performance,stale,open
+R033,Utility Library,2021,Issue,raineorshine,npm-check-updates,823604002,Regexp rejects are not working from configuration file,,closed
+R034,Smart Contract Deployment Tool,2022,Issue,near,create-near-app,1445296352,Git Ignore Needs to have .parcel-cache,,closed
+R035,Blockchain Core / Privacy Protocol,2025,Pull Request,matter-labs,zksync-era,3124791001,"fix(private-rpc): make ""estimate gas"" endpoints protected the same way eth_call is + refactor rpc methods filter ""blacklist"" into a ""whitelist"" + block access to state overrides",,closed
+R036,NFT Protocol / Tool,2023,Pull Request,ProjectOpenSea,seaport,1636477709,Use accounts in generator context,,closed
+R037,Indexing Protocol / Tool,2020,Pull Request,graphprotocol,graph-node,657307314,Add env variable options for sensitive arguments,,closed
+R038,DeFi Protocol,2021,Issue,Uniswap,smart-order-router,1022886468,Remove dependency on bunyan (doesn't work in web worker),,closed
+R039,NFT Protocol / Tool,2023,Pull Request,ProjectOpenSea,seaport,1696240358,add unavailable reason to order details,,closed
+R040,Storage Protocol,2019,Issue,ipfs,kubo,578705370,Testground plan: Naming (IPNS & its multiple routers),,closed
+R041,Infrastructure,2018,Issue,INFURA,infura,306187407,web.eth.Contract support?,,closed
+R042,ZK Library,2025,Pull Request,Consensys,gnark,2928522207,"refactor: remove TODOs, improve error handling, clarify AssignmentOffsets docs, and clean up test assertions",,closed
+R043,Staking Tool,2022,Pull Request,ethereum,staking-deposit-cli,1377825457,Adapt repository for LUKSO,,closed
+R044,Blockchain Core / Protocol,2020,Pull Request,openethereum,parity-ethereum,558999824,"Remove dead bootnodes, add new geth bootnodes","A0-pleasereview 🤓, A2-insubstantial 👶, B7-releasenotes 📜, M2-config 📂, F5-task 🎬, B0-patch-stable 🕷",closed
+R045,Low-level Analysis Tool / Decoder,2023,Issue,Jon-Becker,heimdall-rs,1737964047,[Question]: Can you generate an accurate solidity contract from bytecode if you already have the ABI?,,closed
+R046,Cryptography Library,2025,Pull Request,Consensys,gnark-crypto,3440006994,Feat/check sign,,closed
+R047,Smart Contract Library,2024,Pull Request,Vectorized,solady,2172990291,✨ LibERC6551 createAccount,,closed
+R048,SDK / Library,2025,Issue,paritytech,polkadot-sdk,3172933774,Cant find function `free` in module `crate::allocator` ,"I2-bug, I10-unconfirmed",closed
+R049,Security Tool,2024,Issue,MetaMask,eth-phishing-detect,2705430247,Malicious domain(s) report URGENTLY BLOCK THIS IS SCAM IN TWITTER claim-hyperfoundation.com,blocklist addition,closed
+R050,Education Resource / Boilerplate,2021,Pull Request,hyperledger,fabric-samples,932968087,expose operations endpoint,,closed
+R051,Smart Contract Deployment Tool,2020,Pull Request,near,create-near-app,627469077,Added .cache folder (created by parcel) to ignore,,closed
+R052,Testing Tool,2019,Pull Request,OpenZeppelin,openzeppelin-test-helpers,504290626,Specify unit on balance functions,,closed
+R053,DeFi Protocol,2023,Issue,sablier-labs,lockup,1580209903,Bug in testing flash loan handler,,closed
+R054,Programming Language / Compiler,2020,Pull Request,vyperlang,vyper,642401166,Move config / Adjust flake8 settings,,closed
+R055,Security Tool,2021,Issue,MetaMask,eth-phishing-detect,1017929706,Legit site is blocked - openges.es,,closed
+R056,Metadata Repository,2020,Issue,Uniswap,default-token-list,665241828,Add Fantom FTM token,token request,open
+R057,Analytics / Monitoring Tool,2020,Issue,paritytech,substrate-telemetry,682928647,ConnectionRefused error while sending to telemetry,,closed
+R058,Blockchain Core / Protocol,2020,Pull Request,paritytech,polkadot,629137738,expand validity subsystems descriptions independent of subsystems overview,"A0-please_review, B0-silent",closed
+R059,Other,2020,Pull Request,smartcontractkit,chainlink,652003431,Aggregators can raise flags when they see large deviation changes,,closed
+R060,Testing Tool,2021,Issue,TrueFiEng,Waffle,861058440,Add issue template for bug reports / feature requests,,closed
+R061,Wallet Dapp / Library / Browser,2022,Issue,WalletConnect,walletconnect-monorepo,1251471825,Smart Contract Call Keep Loading on Trust Wallet,"type: bug, status: needs information",closed
+R062,Cryptography Library,2021,Issue,MetaMask,eth-sig-util,807126539,tweetnacl-util 0.15.0,,closed
+R063,Cryptography Library,2023,Pull Request,Consensys,gnark-crypto,1698783211,Fix `RSis.CopyWithFreshBuffer`,,closed
+R064,Blockchain Core / Privacy Protocol,2018,Issue,Consensys,quorum,379699874,Panic with IBFT Regular node,,closed
+R065,Staking Tool,2021,Issue,Uniswap,v3-staker,892270561,Accounting Integration Tests,,closed
+R066,Programming Language / Compiler,2025,Pull Request,paradigmxyz,solar,3012293881,fix(parser): named call arguments are allowed to be empty,,closed
+R067,Specification,2021,Pull Request,ethereum,consensus-specs,905980182,"Shard data none-2/3 confirmation case (separated from PR 2455, TBD)",,closed
+R068,IDE / Development Environment,2020,Issue,ethereum,remix-desktop,751250397,Loading Folders,bug,open
+R069,Utility Library,2021,Issue,raineorshine,npm-check-updates,807809600,Is husky supposed to be required?,bug,closed
+R070,Research,2018,Issue,ipfs,notes,308660945,Interest in live-stream for showing how to build applications on IPFS?,,open
+R071,Programming Language / Compiler,2019,Issue,vyperlang,vyper,472548616,Nonsense struct output with inline returns,bug,closed
+R072,Blockchain Core / Privacy Protocol,2023,Pull Request,AztecProtocol,aztec-packages,1643746875,Circuit-powered block builder,,closed
+R073,Infrastructure,2025,Pull Request,erpc,erpc,3292645389,feat: use rule-based consensus handling to decouple different scenarios,,closed
+R074,Browser Extension,2021,Pull Request,MetaMask,metamask-extension,787173579,Fix hardware account selection,,closed
+R075,Development Platform / Framework,2023,Pull Request,foundry-rs,foundry,1750029597,fix(anvil): disable basefee if manually set to 0,A-evm,closed
+R076,Staking Tool,2020,Issue,ethereum,staking-deposit-cli,703994701,asks for password before keys are generated,,closed
+R077,Programming Language / Compiler,2019,Pull Request,vyperlang,vyper,487244398,Document meaning of key in nonreentrant decorator,,closed
+R078,Documentation,2021,Pull Request,smartcontractkit,documentation,952247776,"Update example in the ""Architecture decentralized data model"" section of the docs",,closed
+R079,NFT Protocol / Tool,2024,Pull Request,Jon-Becker,nft-generator-py,2287416323,Make sure no duplicates are created when `--allow-duplicates` flag is not set,,closed
+R080,Blockchain Core / Privacy Protocol,2025,Pull Request,AztecProtocol,aztec-packages,3175776367,fix: return tuples from public functions,,closed
+R081,Other,2023,Pull Request,smartcontractkit,chainlink,1615992526,allow pending job proposals to be revoked,,closed
+R082,Research,2018,Pull Request,OpenZeppelin,openzeppelin-labs,311677057,Simplify proxy contracts of the fixed storage approach,"kind:enhancement, topic:upgradeability",closed
+R083,ZK Library,2024,Issue,Consensys,gnark,2426789096,bug: ...The usage of func : api.AssertIsLessOrEqual(),,closed
+R084,Documentation,2019,Issue,ethereum,yellowpaper,473669838,Gas cost of ECPAIRING is incorrect ,,closed
+R085,UI / Frontend / Library,2022,Pull Request,rainbow-me,rainbowkit,1401057301,feat: show erc-20 token balance of the user's choosing,enhancement,closed
+R086,Other,2021,Pull Request,smartcontractkit,chainlink,1057466380,Flakey TestPipelineJobSpecErrorsController_Delete_2,ready for review,closed
+R087,Browser Extension,2022,Issue,MetaMask,metamask-extension,1264562092,[Bug]: Account Search functionality not returning correct results,"type-bug, area-settings, Sev2-normal",closed
+R088,Development Platform / Framework,2024,Issue,foundry-rs,foundry,2208553467,--isolate does not work for tload?,T-bug,closed
+R089,SDK / Library,2024,Issue,paritytech,subxt,2253109394,Attempted to use functionality that requires system randomness!!,,closed
+R090,Blockchain Core / Privacy Protocol,2021,Pull Request,Consensys,quorum,975713744,Standalone node MPS DB Upgrade,,closed
+R091,DeFi Protocol,2021,Issue,aave,aave-v3-core,1086136675,Specify numbers in hexadecimal form in ReserveConfiguration.sol,"audit, auditor_ABDK",closed
+R092,Other,2023,Pull Request,smartcontractkit,chainlink,1641971379,core/services/pipeline: reject empty/blank pipelines,,closed
+R093,Education Resource / Boilerplate,2025,Pull Request,hyperledger,fabric-samples,2846131175,Update CA server bin path in test-network-nano-bash,,closed
+R094,Storage Protocol,2018,Pull Request,ethersphere,swarm,346518426,typo: missed Timestamp,,closed
+R095,Storage Protocol,2020,Issue,ipfs,kubo,612431398,IPFS startup with Badger Datastore is hitting the systemd-timeout,"kind/bug, help wanted, topic/repo, topic/daemon + init, status/ready, P2, topic/badger, exp/intermediate",open
+R096,Metadata Repository,2020,Pull Request,trustwallet,assets,736743436,update,Payment Status: Requested,closed
+R097,Documentation,2023,Pull Request,matter-labs,zksync-web-era-docs,1932018521,chore: code formatting,released,closed
+R098,Analytics / Monitoring Tool,2021,Issue,paritytech,substrate-telemetry,958825341,❌ Error while dialing / Handshake / server rejected handshake; status code = 408,,open
+R099,DeFi Protocol,2024,Issue,Uniswap,smart-order-router,2359926144,Base Sepolia,,open
+R100,Security Tool,2023,Issue,crytic,slither,2049887608,[Bug]: Generated string of ir of assignment operation,"bug, good first issue",closed
+R101,ZK Library,2023,Pull Request,Consensys,gnark,1959205757,Fix `sw_emulated` test,,closed
+R102,Education Resource / Boilerplate,2024,Pull Request,crytic,building-secure-contracts,2557179048,Solidity Tools,,closed
+R103,Cryptography Library,2025,Issue,bnb-chain,tss-lib,3035209666,"Sharing our implementation MPCIUM for resilient, simple to use MPC nodes :  built on top of tss-lib. Launch MPC nodes in minutes",,closed
+R104,Documentation,2022,Issue,MetaMask,metamask-docs,1253332890,[urgent bug]Cannot change logo dapp,,closed
+R105,Browser Extension,2023,Pull Request,MetaMask,metamask-extension,1630062181,Sign-in With Ethereum SIWE cleanup,"area-signatures, team-confirmations-secure-ux-PR",closed
+R106,Wallet Dapp / Library / Browser,2022,Pull Request,trustwallet,wallet-core,1300765752,[NEAR] Add stake / add key / delete key / create account / delete account,,closed
+R107,Documentation,2025,Pull Request,MetaMask,metamask-docs,2918356041,Update transaction-related content,,closed
+R108,Identity / Naming Protocol,2025,Issue,ensdomains,ens-contracts,2991571942,routeDispatcher() reintroduction in rollback-v4 branch – missing audit metadata?,,closed
+R109,NFT Protocol / Tool,2023,Pull Request,ProjectOpenSea,seadrop,1614529247,Add clone factory for lightweight deployments ,,closed
+R110,Blockchain Core / Privacy Protocol,2024,Pull Request,matter-labs,zksync-era,2208064492,chore(multivm): vm_latest cloned to vm_1_4_2,,closed
+R111,Development Platform / Framework,2018,Pull Request,embarklabs,embark,357312523,Fix compiler warnings when running test suite,,closed
+R112,IDE / Development Environment,2021,Issue,ethereum,remix-desktop,1053365865,The versions after 1.3.0 in ubuntu  have no deploy button??,,closed
+R113,Security Tool,2020,Pull Request,crytic,slither,683989395,Increase default python stack depth limit,,closed
+R114,Cryptography Library,2021,Pull Request,MetaMask,eth-sig-util,782396269,Standardize TypeScript and lint configuration,,closed
+R115,Staking Tool,2020,Pull Request,ethereum,staking-deposit-cli,615434714,Fix `test_cli.py` folder initialization,,closed
+R116,Indexing Protocol / Tool,2025,Pull Request,graphprotocol,contracts,3042362049,fix(commit): updating Husky configuration for linting and pre-commit,,closed
+R117,Smart Contract Library,2023,Issue,OpenZeppelin,openzeppelin-contracts,1623243449,Pause Mechanism for Smart Contract Functions,,open
+R118,Security Tool,2018,Issue,crytic,etheno,372649729,Estimate gas cost when emitting Echidna transactions,enhancement,closed
+R119,Blockchain Core / Protocol,2018,Issue,openethereum,parity-ethereum,291268583,No traces available when in dev mode (instantSeal engine),"P5-sometimesoon 🌲, F3-annoyance 💩, M4-core ⛓",closed
+R120,DeFi Protocol,2024,Pull Request,Uniswap,smart-order-router,2716266569,chore: bump sor to 4.8.5 - fix: Use syntheticGasCostInTermsOfQuoteTok…,,closed
+R121,Indexing Protocol / Tool,2019,Pull Request,graphprotocol,graph-node,503071411,Two smallish changes,,closed
+R122,Smart Contract Deployment Tool,2020,Pull Request,near,create-near-app,561812541,Refactor project generation so that contract is copied from single so…,,closed
+R123,Smart Contract Library,2023,Pull Request,OpenZeppelin,cairo-contracts,1673966254,Migrate udc,,closed
+R124,Programming Language / Compiler,2020,Issue,vyperlang,vyper,634836511,Meeting 22nd June 2020,meeting,closed
+R125,Other,2024,Pull Request,smartcontractkit,chainlink,2486898921,Update the code owner of `feeds` service from  FMS group to OPCORE,,closed
+R126,Identity / Naming Protocol,2022,Pull Request,lens-protocol,core,1163178193,added TokenGatedReferenceModule ,bounty,closed
+R127,ZK Library,2023,Pull Request,Consensys,gnark,2002785565,feat: exit when condition is not filled,,closed
+R128,Education Resource / Boilerplate,2022,Issue,FuelLabs,sway-applications,1485783618,Deploy an application to the beta-2 devnet,Task,closed
+R129,Browser Extension,2022,Pull Request,MetaMask,metamask-extension,1355795735,NFT Approval and SetApprovalForAll confirmation screens header updated,,closed
+R130,Testing Tool,2020,Pull Request,ethereum,hive,768771319,simulators/devp2p: updated chain file to include more tx,,closed
+R131,Development Platform / Framework,2021,Issue,TrueFiEng,useDApp,1006757420,[question] Using msg.sender with Multicall,,closed
+R132,Education Resource / Boilerplate,2022,Pull Request,FuelLabs,sway-applications,1501801086,Update docs theme/highlight.js,"Documentation, Good First Issue",closed
+R133,Cryptography Library,2021,Pull Request,MetaMask,eth-sig-util,945395986,Fix various mistakes in the README API documentation,,closed
+R134,Staking Tool,2021,Issue,Uniswap,v3-staker,909771607,In Depth Math review of rewards calculations,priority-blocker,closed
+R135,Identity / Naming Protocol,2023,Pull Request,ensdomains,ens-contracts,1818071030,Add L2 reverse registrar contract,,open
+R136,DeFi Protocol,2025,Issue,Uniswap,v4-core,3167227680,[Bug]: Solhint Doesn't Run,bug,closed
+R137,ZK Library,2021,Pull Request,Consensys,gnark,836244208,Feat/plonk prover,type: new feature,closed
+R138,UI / Frontend / Library,2021,Pull Request,Uniswap,interface,935463415,fix: add optional chaining for stakingInfo,,closed
+R139,Storage Protocol,2025,Pull Request,ethersphere,bee,2840459605,fix: stewardship retrieving the same chunk multiple times,,closed
+R140,Security Tool,2021,Issue,crytic,slither,970703772,Support for free functions,"bug, High Priority",closed
+R141,Metadata Repository,2021,Pull Request,trustwallet,assets,836996494,Add NAUT LOGO & INFO ( Bep20 ),Payment Status: Paid,closed
+R142,Education Resource / Boilerplate,2025,Issue,bnb-chain,example-hub,3726247149,🙏🚨🙏🚨 plz plz AP Mera is code PE Kam karlu bas jaldi plz 🙏🙏😔🙏😔🙏😔🚨,enhancement,closed
+R143,ZK Library,2023,Pull Request,matter-labs,era-boojum,1959600221,Implement serde for UInt8,,closed
+R144,Identity / Naming Protocol,2024,Issue,lens-protocol,core,2374665340,Degrees of Separation bug,,closed
+R145,UI / Frontend / Library,2021,Issue,Uniswap,interface,911752026,Padding when resizing the gov proposal UI,visual bug,closed
+R146,Other,2022,Pull Request,smartcontractkit,chainlink,1197785039,VRFV2: Exponential backoff on failed requests,,closed
+R147,Storage Protocol,2022,Issue,ethersphere,bee,1236937965,Subdomain support for providing secure context when hosting websites,"enhancement, issue",closed
+R148,Low-level Analysis Tool / Decoder,2025,Pull Request,paradigmxyz,cryo,2798517885,chore: fix some typos in comment,,open
+R149,DeFi Protocol,2023,Pull Request,Uniswap,v4-core,1755453159,refactor(Hooks): Update hook description and add test for new hook combination,,closed
+R150,SDK / Library,2022,Issue,FuelLabs,fuels-rs,1496828149,Methods without `#[payable]` annotation cannot accept coins,"enhancement, abigen",closed
+R151,Low-level Analysis Tool / Decoder,2025,Issue,cdump,evmole,3090765934,Finding calldata bytes real types,,open
+R152,Smart Contract Deployment Tool,2020,Issue,near,create-near-app,755639449,`compile` script doesn't propagate build errors,bug,closed
+R153,Staking Tool,2022,Issue,ethereum,staking-deposit-cli,1148483916,Way to set multiple eth1 withdrawal addresses,,open
+R154,Infrastructure,2025,Pull Request,erpc,erpc,3124133322,fix: encode empty slices as empty slices instead of null values,,closed
+R155,Indexing Protocol / Tool,2024,Pull Request,graphprotocol,graph-node,2292886935,Check if subgraph head exists before trying to unfail,,closed
+R156,Blockchain Core / Privacy Protocol,2024,Pull Request,matter-labs,zksync-era,2586377208,fix(ci): install zkstack at the correct time,,closed
+R157,Infrastructure,2019,Pull Request,hyperledger,fabric-ca,501540300,[FABC-875] Fix Go Version in ci.props,,closed
+R158,SDK / Library,2023,Issue,web3,web3.js,1986767878,Internal JSON-RPC error On the ios metamask app,"Bug, 4.x",closed
+R159,Blockchain Core / Privacy Protocol,2024,Issue,AztecProtocol,aztec-packages,2165601716, Running PXE at a custom port with `aztec-sandbox` is only possible by adding `PORT: 8000` in docker-compose.yml,A-documentation,closed
+R160,Development Platform / Framework,2023,Issue,NomicFoundation,hardhat,1867462277,Function reusability in test scripts,status:triaging,closed
+R161,Research,2019,Issue,ipfs,notes,412774378,Push notification API,pubsub,open
+R162,Blockchain Core / Protocol,2022,Issue,ethereum,go-ethereum,1330976100,Geth not start bind: address already in use,type:bug,closed
+R163,Low-level Analysis Tool / Decoder,2019,Issue,Consensys,abi-decoder,484955536,How to create the testABI,,open
+R164,Other,2025,Pull Request,smartcontractkit,chainlink,3700055552,Fix changeset for 2.31.0,,closed
+R165,Specification,2021,Issue,ipfs,specs,894748302,Bitswap spec does not include 1.2.0 protocol implemented in go-ipfs v0.5.0,need/triage,open
+R166,Blockchain Core / Protocol,2023,Pull Request,hyperledger,besu,1826571269,Add type to PendingTransactionDetail,snack,closed
+R167,DeFi Protocol,2024,Pull Request,Uniswap,v4-core,2064547971,Support ERC6909 on liquidity modification,,closed
+R168,Browser Extension,2025,Pull Request,MetaMask,metamask-extension,2882139356,Fix typo in messages.json,stale,closed
+R169,Smart Contract Library,2024,Pull Request,Vectorized,solady,2065959164,♻️ Improve TestPlus,,closed
+R170,Research,2018,Issue,OpenZeppelin,openzeppelin-labs,316374003,Unify naming for logic contract in all projects,kind:documentation,open
+R171,Other,2024,Pull Request,smartcontractkit,chainlink,2445490562,Custom Astar finality,,closed
+R172,Wallet Dapp / Library / Browser,2021,Pull Request,rainbow-me,rainbow,1077176649,fix android tx list menu,needs dev review,closed
+R173,Low-level Analysis Tool / Decoder,2023,Issue,Jon-Becker,heimdall-rs,1861483240,[Feature]: Add snapshot library wrappers,,closed
+R174,Documentation,2023,Pull Request,MetaMask,metamask-docs,2005097393,Document setting up Infura in Unity,,closed
+R175,Metadata Repository,2021,Pull Request,solana-labs,token-list,1046484931,Update solana.tokenlist.json,automerge-error,open
+R176,Analytics / Monitoring Tool,2021,Issue,Uniswap,v3-info,897502624,Liquidity tab looks buggy for USDT/USDC pair,bug,closed
+R177,Smart Contract Deployment Tool,2020,Issue,NomicFoundation,truffle-flattener,614307354,Solidity 6 'immutable' breaks parser,,closed
+R178,Infrastructure,2024,Issue,alchemyplatform,rundler,2550996674,[pool/builder] Reorgs from inconsistent RPCs lead to lost UOs,"enhancement, prevent-stale",open
+R179,Metadata Repository,2021,Pull Request,solana-labs,token-list,893543913,Add SLNDN Token,,closed
+R180,Smart Contract Library,2022,Issue,OpenZeppelin,openzeppelin-contracts,1373509522,Unable to initialize OpenZeppelin Clone contract during Hardhat Test (Error: VM Exception),,closed
+R181,Programming Language / Compiler,2018,Issue,vyperlang,vyper,307669083,Fix deleting a value from a map.,,closed
+R182,Research,2018,Pull Request,OpenZeppelin,openzeppelin-labs,339260194,#102 WIP: modified assertRevert test helper,status:in progress,open
+R183,Browser Extension,2024,Pull Request,MetaMask,metamask-extension,2104769491,Create npm-publish-github-packages.yml,"stale, external-contributor",closed
+R184,Development Platform / Framework,2020,Pull Request,NomicFoundation,hardhat,608164619,Migrate to ethers v5,,closed
+R185,Identity / Naming Protocol,2024,Pull Request,lens-protocol,core,2722957795,Typos,,closed
+R186,UI / Frontend / Library,2023,Pull Request,Uniswap,interface,1693077706,fix: update service worker to precache css/js files,,closed
+R187,Research,2018,Pull Request,ethereum,research,333357617,Fix typo in clique oracle pseudocode,,closed
+R188,Low-level Analysis Tool / Decoder,2025,Pull Request,Jon-Becker,heimdall-rs,3030055034,feat: update citations,,closed
+R189,Utility Library,2019,Issue,raineorshine,npm-check-updates,413970463,Question: How to specify which dist-tag to upgrade to?,"enhancement, revive-me",closed
+R190,Blockchain Core / Privacy Protocol,2023,Pull Request,AztecProtocol,aztec-packages,1725685120,"add L1->L2 msg store, fix #520",,closed
+R191,Browser Extension,2023,Pull Request,MetaMask,metamask-extension,1718112586,Moving `RESIZE` constant to textarea component folder,"team-design-system, external-contributor",closed
+R192,Documentation,2022,Pull Request,ipfs,ipfs-docs,1168823876,Changes IPLD to an external link.,,closed
+R193,Low-level Analysis Tool / Decoder,2024,Issue,Jon-Becker,heimdall-rs,2367860505,"decompile error ""failed to decompile bytecode: Internal error: symbolic execution failed: channel is empty and disconnected""","T-bug, R-duplicate",closed
+R194,Cryptography Library,2020,Pull Request,Consensys,gnark-crypto,657589590,"Refactor CyclotomicSquare method into template generator, minor clean-up",cleanup,closed
+R195,Specification,2019,Pull Request,ethereum,consensus-specs,405815307,Misc fixes of `get_next_epoch_crosslink_committees`,,closed
+R196,Smart Contract Library,2021,Issue,solana-labs,solana-program-library,910976454,spl-token-cli: `no signers found` error is returned for null signer,,closed
+R197,Documentation,2025,Pull Request,foundry-rs,book,3011279233,chore: migrate to vocs,,closed
+R198,IDE / Development Environment,2021,Issue,ethereum,remix-desktop,1048460955,How to connect my metamask account into Remix IDE - Desktop,,closed
+R199,Security Tool,2024,Issue,MetaMask,eth-phishing-detect,2760986387,Malicious domain(s) report scam phishing domains,blocklist addition,closed
+R200,Cryptography Library,2018,Issue,MetaMask,eth-sig-util,351268874,Confusing terminology: TypedDataUtils.sign() actually hashes data,,closed
+R201,IDE / Development Environment,2020,Pull Request,Consensys,cakeshop,664776085,Skip state updates on RPC calls that fail for API-specific reasons,,closed
+R202,UI / Frontend / Library,2025,Pull Request,aave,interface,3571633825,fix: temporary safeguard to prevent Prime USDS from displaying Core incentives,,closed
+R203,Metadata Repository,2024,Pull Request,trustwallet,assets,2198040131,"Add Stakely validators for KSM, INJ, CRO, NEAR, STRD, SUI, JUNO, & BLD",Payment Status: Paid,closed
+R204,Infrastructure,2025,Issue,alchemyplatform,rundler,2849079312,[builder] Submission proxy specific logic,enhancement,closed
+R205,UI / Frontend / Library,2023,Pull Request,Uniswap,interface,1786580618,Update package.json,,closed
+R206,Specification,2024,Pull Request,ethereum,ERCs,2361226449,Update ERC-7700: Image Size Fixes,e-consensus,closed
+R207,Smart Contract Deployment Tool,2022,Issue,pcaversaccio,xdeployer,1497947296,[Feature-Request]: Add Canto EVM,feature 💥,closed
+R208,Analytics / Monitoring Tool,2021,Pull Request,paritytech,substrate-telemetry,843461588,listen on external interfaces in docker container,,closed
+R209,IDE / Development Environment,2022,Pull Request,solana-playground,solana-playground,1468158049,Vscode: Fix seahorse project generate,,closed
+R210,Testing Tool,2023,Pull Request,ethereum,hive,1556586126,simulators/ethereum/engine: Remove PoW config from withdrawals,,closed
+R211,Specification,2023,Issue,Uniswap,token-lists,1860296118,> the z-index is wacky when you click on the ‘…’ view more next to a virtual card,,open
+R212,Metadata Repository,2023,Issue,Uniswap,default-token-list,1520448219,Add {SOFT}: {SOFT DAO},token request,open
+R213,Utility Library,2020,Pull Request,near,borsh,631891494,refactor(borsh-rs): Removed Cargo.lock as it is advised for lib crates,,closed
+R214,Metadata Repository,2023,Pull Request,trustwallet,assets,1747717925,Add IUPPITERgames  (POLYGON),Payment Status: Requested,closed
+R215,Indexing Protocol / Tool,2020,Issue,Uniswap,v2-subgraph,743250790,Type UniswapFactory has no field pairs but the Default example query includes it,,closed
+R216,Other,2020,Issue,blockscout,blockscout,618684016,LUKSO L14: <Issue Title>,,closed
+R217,NFT Protocol / Tool,2022,Issue,ProjectOpenSea,opensea-creatures,1149007317,Getting Object.TransactionRevertedWithoutReasonError while running the tutorial,,open
+R218,Testing Tool,2020,Pull Request,sc-forks,solidity-coverage,717554292,"Upgrade Web3 to ^1.3.0, ganache-cli to 6.11.0",,closed
+R219,Staking Tool,2021,Issue,Uniswap,v3-staker,909754238,Consider not deleting `Incentive` on endIncentive,solidity review item,closed
+R220,Identity / Naming Protocol,2025,Pull Request,ensdomains,ens-contracts,3141167743,Fix metadata service URL in Name Wrapper,,closed
+R221,Smart Contract Library,2024,Pull Request,matter-labs,era-contracts,2293047724,Allow to skip initialization of chain governance,,closed
+R222,Documentation,2022,Pull Request,MetaMask,metamask-docs,1371179132,Bump to Node 16,,closed
+R223,Blockchain Core / Protocol,2018,Pull Request,openethereum,parity-ethereum,389708881,Backports for beta 2.2.5,"A8-looksgood 🦄, A8-backport 🕸, M4-core ⛓",closed
+R224,SDK / Library,2023,Issue,ethers-io,ethers.js,1739677952,ethers 5.7.2 TypeError: Cannot read properties of undefined (reading 'callback'),"investigate, v5",open
+R225,Wallet Dapp / Library / Browser,2022,Issue,RabbyHub,Rabby,1204273557,Multiple wallets on `window.ethereum` with a wallet router,"discussion, proposal",closed
+R226,Smart Contract Library,2021,Issue,OpenZeppelin,openzeppelin-contracts,815537638,"Add support for EIP2098 ""short signatures"" in the ECDSA library ","contracts, idea",closed
+R227,Development Platform / Framework,2021,Issue,NomicFoundation,hardhat,948894185,`hardhat_setStorageAt` fails with `InvalidArgumentsError` in some cases,,closed
+R228,SDK / Library,2025,Pull Request,paritytech,polkadot-sdk,2809970050,`find_potential_parents`: Enforce `max_depth` from the `pending_block`,T0-node,closed
+R229,Metadata Repository,2021,Pull Request,trustwallet,assets,912232432,Add Zabaku Inu (BEP20),Payment Status: Requested,closed
+R230,Identity / Naming Protocol,2022,Pull Request,lens-protocol,core,1174017921,Misc: Update Expected Test Revert Reasons,,closed
+R231,DeFi Protocol,2022,Pull Request,FuelLabs,swayswap,1209962699,Fix Pool Calls,,closed
+R232,IDE / Development Environment,2023,Issue,solana-playground,solana-playground,1698923561,Example Program test doesn't work,,closed
+R233,Analytics / Monitoring Tool,2024,Pull Request,ipfs,public-gateway-checker,2495184527,feat: add flk-ipfs.io,,closed
+R234,Research,2019,Issue,ethereum,research,415923575,Bitwise ghost implementation - clear winner tie,,open
+R235,Indexing Protocol / Tool,2022,Pull Request,graphprotocol,graph-node,1203778553,feat(chain): Arweave integration,,closed
+R236,Smart Contract Library,2025,Pull Request,matter-labs,era-contracts,3753677318,cherrypick merge commit (#1938),,closed
+R237,Blockchain Core / Protocol,2022,Issue,sigp,lighthouse,1176007475,No way to add remote signer validators from the CLI,"enhancement, val-client",open
+R238,Blockchain Core / Protocol,2020,Issue,sigp,lighthouse,669505008,Fix double builds on Docker Hub,"infra-ci, A1",closed
+R239,Utility Library,2022,Issue,raineorshine,npm-check-updates,1176466394,Wrong NPM package is checked (NPM is installed using Volta),bug,closed
+R240,Development Platform / Framework,2025,Pull Request,NomicFoundation,hardhat,3330168491,ci: test on Linux ARM and deprecate Intel MacOS,no changeset needed,closed
+R241,Smart Contract Deployment Tool,2018,Issue,NomicFoundation,truffle-flattener,372514763,"Having a variable named ""calldata"" makes things explode.",,closed
+R242,Staking Tool,2022,Issue,ethereum,staking-deposit-cli,1315243052,`goerli is not a valid language option`,,open
+R243,Infrastructure,2024,Pull Request,alchemyplatform,rundler,2588959114,style: add tomlfmt.toml to unify cargo-sort configuration.,,closed
+R244,Programming Language / Compiler,2021,Pull Request,FuelLabs,sway,1000835684,Extend sway server to support multiple files,language server,closed
+R245,Storage Protocol,2021,Issue,ipfs,kubo,1084011470,Create a public 2022 roadmap,,closed
+R246,Smart Contract Deployment Tool,2020,Pull Request,near,create-near-app,565053301,"Rust comments, simplify AssemblyScript contract",,closed
+R247,Security Tool,2019,Issue,trailofbits,manticore,397612369,Default gas values,"ethereum, decision-needed",closed
+R248,Staking Tool,2022,Pull Request,ethereum,staking-deposit-cli,1183432510,Release version v2.1.0,release,closed
+R249,Infrastructure,2025,Pull Request,hyperledger,fabric-ca,3662256499,Pr 462,,closed
+R250,Smart Contract Deployment Tool,2020,Issue,near,create-near-app,646913645,support yarn create,,closed
+R251,Testing Tool,2018,Pull Request,ethereum,tests,329957819,Vmtests valid,,closed
+R252,UI / Frontend / Library,2019,Issue,Uniswap,interface,419186667,Pending swap and tab closed,,closed
+R253,IDE / Development Environment,2020,Pull Request,Consensys,cakeshop,770293073,Adds a yellow icon with tooltip explaining that the first compile can…,,closed
+R254,Other,2023,Pull Request,smartcontractkit,chainlink,1718275840,bug/2249: assumption violations in BlockHistoryEstimator now return gas price if specified,,closed
+R255,Specification,2023,Pull Request,ethereum,portal-network-specs,1683176989,Adjust the FindContent JSON-RPC call to also retrieve data over uTP,,closed
+R256,Infrastructure,2018,Issue,INFURA,infura,343142137,Error when trying to add a file into ipfs from a js App,,closed
+R257,Development Platform / Framework,2021,Pull Request,foundry-rs,foundry,1043181649,Use new Solc compilation pipeline,,closed
+R258,Staking Tool,2021,Issue,ethereum,staking-deposit-cli,852945879,mnemonic phrase not visible,,open
+R259,Indexing Protocol / Tool,2018,Issue,graphprotocol,graph-node,346719852,Improve API for handling the same event from multiple contracts,,closed
+R260,Storage Protocol,2023,Issue,ipfs,kubo,2034474187,Leverage Content Path Affinity in routing,"kind/enhancement, topic/routing, exp/expert, P2, effort/weeks, topic/sharding",open
+R261,Programming Language / Compiler,2023,Issue,FuelLabs,sway,1602096776,[forc-doc] Shows version 0.0.0,forc-doc,closed
+R262,Research,2018,Issue,ethereum,research,330851880,Casper The Finality Gadget Paper : Update Checkpoints Frequency,,open
+R263,Testing Tool,2022,Pull Request,ethereum,hive,1332664045,rpc-compat: add special test for `debug_getBadBlocks`,,closed
+R264,Programming Language / Compiler,2023,Issue,FuelLabs,sway,1587552728,forc-doc: support workspaces,"enhancement, good first issue, P: high, forc-doc, may be rewarded, ODHack13",closed
+R265,ZK Library,2024,Pull Request,Consensys,gnark,2692993046,final exponentiation: select optimisation,,closed
+R266,Utility Library,2023,Issue,near,borsh-rs,2034666764,`derive` macros require `cargo` to be present,,closed
+R267,Storage Protocol,2024,Issue,ethersphere,bee,2168765464,Self-repairing of erasure coded uploads by reconstructing and reuploading lost chunks periodically,issue,open
+R268,Blockchain Core / Protocol,2020,Issue,hyperledger,besu,614493518,"Add logic to check group membership based on pgId, user, and block hash","privacy, TeamRevenant",closed
+R269,Utility Library,2023,Issue,raineorshine,npm-check-updates,1850535465,enginesNode should not filter out packages with no engine field,bug,closed
+R270,Low-level Analysis Tool / Decoder,2022,Issue,crytic,rattle,1307969026,Installation steps are unclear,enhancement,open
+R271,NFT Protocol / Tool,2022,Pull Request,ProjectOpenSea,seaport,1500550297,Add @jameswenzel as a coauthor,,closed
+R272,Infrastructure,2022,Pull Request,hyperledger,fabric-ca,1236371741,escape special charecters that can be set through the command line ar…,,open
+R273,SDK / Library,2024,Pull Request,near,near-sdk-rs,2126046411,fix: deprecated `store::UnorderedMap` and `store::UnorderedSet` due to not meeting the original requirements (iteration over a collection of more than 2k elements runs out of gas),,closed
+R274,Analytics / Monitoring Tool,2022,Issue,ipfs,public-gateway-checker,1468699308,public-gateway-checker specific metrics,,open
+R275,Education Resource / Boilerplate,2023,Issue,smartcontractkit,full-blockchain-solidity-course-js,1571591997,TypeError: invalid BytesLike value,code-bug,closed
+R276,Analytics / Monitoring Tool,2018,Issue,paritytech,substrate-telemetry,337581230,Calculate block propagation time per node,,closed
+R277,Smart Contract Deployment Tool,2024,Issue,near,create-near-app,2228760952,Mobile App,,closed
+R278,Analytics / Monitoring Tool,2023,Pull Request,ipfs,public-gateway-checker,1954220660,Delisting twdragon.net,,closed
+R279,Testing Tool,2018,Pull Request,ethereum,eth-tester,299495053,Manually mine pending transactions,,closed
+R280,Specification,2020,Pull Request,ethereum,consensus-specs,587885885,MetaData and Ping,,closed
+R281,IDE / Development Environment,2019,Issue,Consensys,cakeshop,501903367,Customize cakeshop,,closed
+R282,ZK Library,2022,Issue,Consensys,gnark,1305989460,Improve non-native arithmetic gadget,"type: consolidate, type: perf, zk-evm",open
+R283,ZK Library,2025,Issue,Consensys,gnark,3076375007,Improve native field extension gadget,type: consolidate,open
+R284,DeFi Protocol,2020,Issue,compound-finance,compound-protocol,656757664,Flash Loan Griefing,quirk,closed
+R285,SDK / Library,2024,Pull Request,FuelLabs,fuels-ts,2273795258,chore: add relative link lint for `lint:md-links`,chore,closed
+R286,NFT Protocol / Tool,2022,Pull Request,ProjectOpenSea,seaport,1262233719,Change nested scope to unchecked nested scope,,closed
+R287,Blockchain Core / Protocol,2022,Pull Request,hyperledger,fabric,1449254948,chore: remove wrong duplicate word,,closed
+R288,Wallet Dapp / Library / Browser,2025,Pull Request,MetaMask,core,2833307252,chore(multichain-assets): Rename `ControllerMessenger` to `Messenger`,team-wallet-framework,closed
+R289,Education Resource / Boilerplate,2023,Issue,FuelLabs,sway-applications,1596957948,Canvas Smart Contract,"Good First Issue, App: Games",closed
+R290,UI / Frontend / Library,2023,Pull Request,rainbow-me,rainbowkit,1534538020,Update installation.mdx,,closed
+R291,Research,2019,Issue,ipfs,notes,417943269,[Question] Estimated number of IPFS users?,,closed
+R292,Analytics / Monitoring Tool,2021,Pull Request,paritytech,substrate-telemetry,978080350,Hardening of the Frontend docker image,Frontend,closed
+R293,Programming Language / Compiler,2020,Pull Request,vyperlang,vyper,709762972,Fix NatSpecSyntaxException error when compiling ERC721.vy with userdoc format,,closed
+R294,Cryptography Library,2019,Issue,bnb-chain,tss-lib,492094585,[Audit] IsOnCurve method not called during unmarshal/new,audit,closed
+R295,Wallet Dapp / Library / Browser,2023,Pull Request,MetaMask,metamask-mobile,1927051351,refactor(ramp): refactor quotes view copy and list,"team-ramp, ramp-qa-passed, release-7.9.0",closed
+R296,Research,2018,Issue,ipfs,notes,285989164,"Article of interest: ""Performance Analysis of Object Store Systems in a Fog and Edge Computing Infrastructure""",,open
+R297,IDE / Development Environment,2018,Issue,Consensys,cakeshop,335696874,"Cakeshop not compatible with RAFT Consensus, Getting the following error ""Failed to connect to RPC,  invalid argument 1: json: cannot unmarshal hex string without 0x prefix into Go value of type hexutil.Bytes""",enhancement,closed
+R298,UI / Frontend / Library,2022,Issue,aave,interface,1141229528,Gas configuration is difficult to close,,closed
+R299,Specification,2022,Issue,FuelLabs,fuel-specs,1287372783,Behavior of logarithm when less than base,comp:FVM,closed
+R300,UI / Frontend / Library,2022,Pull Request,ethereum,ethereum-org-website,1228524769,Included Erc-4626 in token standards- [Fixes #6255],"content 🖋️, abandoned",closed
+R301,Storage Protocol,2020,Issue,ipfs,kubo,714057724,go-msgio checksum mismatch ,"kind/bug, need/triage",closed
+R302,Cryptography Library,2024,Pull Request,ethereum,js-ethereum-cryptography,2491138022,ci: update versions,,closed
+R303,SDK / Library,2022,Issue,web3swift-team,web3swift,1447493677,HD wallets with BIP 44,enhancement,closed
+R304,Identity / Naming Protocol,2019,Pull Request,ensdomains,ens,541508540,Adding interface to reverse registrar,,open
+R305,Identity / Naming Protocol,2022,Pull Request,lens-protocol,core,1176041924,fix: Remove the BPS_MAX Minimum Fee Requirement,,closed
+R306,Identity / Naming Protocol,2022,Pull Request,ensdomains,ens-contracts,1393085092,Replace abstract NameResolver contract with import in ReverseRegistrar.sol,,open
+R307,Low-level Analysis Tool / Decoder,2022,Pull Request,Jon-Becker,heimdall-rs,1394848888,fix(decompile) restore write output to file,,closed
+R308,NFT Protocol / Tool,2022,Issue,ProjectOpenSea,seaport,1276127280,Collection Offers on api,,closed
+R309,Documentation,2021,Issue,MetaMask,metamask-docs,1057981473,Dart support for Metamask,,closed
+R310,Storage Protocol,2019,Issue,ethersphere,swarm,539972882,Implement postage stamps,"priority, incentives, v1.0",open

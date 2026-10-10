@@ -1,0 +1,8 @@
+bucket,n_docs
+other,8646
+attestation_aggregation,798
+networking_p2p,574
+fork_choice,356
+finality_justification,326
+testing_verification,159
+state_transition,103
